@@ -29,7 +29,7 @@ namespace TempLat {
         mRoot(fm.getTag()+fm.getWorkingDir())
         {
         	// This checks which energies are specified in the string "toSave" (passed as a parameter), and creates the corresponding h5 files to save the snapshots.
-        
+            saveScalarConfig =  IsInContainer::check("S_C", toSave);
             saveScalarK =  IsInContainer::check("E_S_K", toSave);  // kinetic energy of the scalar singlets
             saveScalarG =  IsInContainer::check("E_S_G", toSave);  // gradient energy of the scalar singlets
             saveComplexScalarK =  IsInContainer::check("E_CS_K", toSave);  // kinetic energy of the complex scalars
@@ -42,7 +42,11 @@ namespace TempLat {
             saveSU2Mag =  IsInContainer::check("E_B_G", toSave);  // magnetic energy of the SU(2) gauge sector
             savePot =  IsInContainer::check("E_V", toSave); // potential energy
 
-
+             if(saveScalarConfig) {
+                nameScalarC = mRoot + "snapshot_scalar.h5"; // name of the file
+                fIO.saver.create( nameScalarC  );
+                fIO.saver.close();
+            }
             if(saveScalarK) {
                 nameScalarK = mRoot + "kinetic_energy_snapshot_scalar.h5"; // name of the file
                 fIO.saver.create( nameScalarK  );
@@ -113,7 +117,15 @@ namespace TempLat {
 		 // This saves the energy snapshots at the corresponding HDF5 files
         template <class Model, typename T>
         void measure(Model& model, T t)
-        {
+        {   
+
+            if(saveScalarConfig) {   // kinetic energy of the scalar singlets
+                ForLoop(i, 0, Model::Ns -1,
+                                fIO.saver.open( nameScalarC );
+                                fIO.saver.save(t, FieldFunctionals::fieldConfig(model,i), "S_C_" + std::to_string(i));
+                                fIO.saver.close();
+                        );
+            }
             if(saveScalarK) {   // kinetic energy of the scalar singlets
                 ForLoop(i, 0, Model::Ns -1,
                                 fIO.saver.open( nameScalarK );
@@ -197,14 +209,14 @@ namespace TempLat {
         FileIO fIO;
         std::string mRoot;
 
-        bool saveScalarG, saveScalarK;
+        bool saveScalarG, saveScalarK, saveScalarConfig;
         bool saveComplexScalarG, saveComplexScalarK;
         bool saveSU2DoubletG, saveSU2DoubletK;
         bool saveU1Mag, saveU1El;
         bool saveSU2Mag, saveSU2El;
         bool savePot;
 
-        std::string nameScalarG, nameScalarK;
+        std::string nameScalarG, nameScalarK, nameScalarC;
         std::string nameComplexScalarG, nameComplexScalarK;
         std::string nameSU2DoubletG, nameSU2DoubletK;
         std::string nameU1Mag, nameU1El;

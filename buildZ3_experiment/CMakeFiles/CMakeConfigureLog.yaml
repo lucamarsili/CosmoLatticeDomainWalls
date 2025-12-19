@@ -1,0 +1,1968 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineSystem.cmake:204 (message)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      The system is: Linux - 5.14.0-503.31.1.el9_5.x86_64 - x86_64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler: /bin/c++ 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "a.out"
+      
+      The CXX compiler identification is GNU, found in:
+        /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/3.26.5/CompilerIdCXX/a.out
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "/usr/share/cmake/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler: /bin/cc 
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "a.out"
+      
+      The C compiler identification is GNU, found in:
+        /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/3.26.5/CompilerIdC/a.out
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_4bd4e/fast && /bin/gmake  -f CMakeFiles/cmTC_4bd4e.dir/build.make CMakeFiles/cmTC_4bd4e.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J'
+        Building CXX object CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o
+        /bin/c++   -v -o CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Using built-in specs.
+        COLLECT_GCC=/bin/c++
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4bd4e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/marlu/ccSoVTIi.s
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux
+         /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: e93254d940b36bb677eb536fa6c50158
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/'
+         as -v --64 -o CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o /tmp/marlu/ccSoVTIi.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-54.el9
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.'
+        Linking CXX executable cmTC_4bd4e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bd4e.dir/link.txt --verbose=1
+        /bin/c++  -v -rdynamic CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4bd4e 
+        Using built-in specs.
+        COLLECT_GCC=/bin/c++
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4bd4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_4bd4e.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/marlu/ccZUJyWS.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4bd4e /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4bd4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_4bd4e.'
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed CXX implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11] ==> [/usr/include/c++/11]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux] ==> [/usr/include/c++/11/x86_64-redhat-linux]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward] ==> [/usr/include/c++/11/backward]
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/include/c++/11;/usr/include/c++/11/x86_64-redhat-linux;/usr/include/c++/11/backward;/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed CXX implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_4bd4e/fast && /bin/gmake  -f CMakeFiles/cmTC_4bd4e.dir/build.make CMakeFiles/cmTC_4bd4e.dir/build]
+        ignore line: [gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Dyz18J']
+        ignore line: [Building CXX object CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o]
+        ignore line: [/bin/c++   -v -o CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/c++]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1plus -quiet -v -D_GNU_SOURCE /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_4bd4e.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mtune=generic -march=x86-64-v2 -version -o /tmp/marlu/ccSoVTIi.s]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/x86_64-redhat-linux]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/../../../../include/c++/11/backward]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C++17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: e93254d940b36bb677eb536fa6c50158]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o /tmp/marlu/ccSoVTIi.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-54.el9]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o' '-c' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [Linking CXX executable cmTC_4bd4e]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_4bd4e.dir/link.txt --verbose=1]
+        ignore line: [/bin/c++  -v -rdynamic CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -o cmTC_4bd4e ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/c++]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_4bd4e' '-shared-libgcc' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_4bd4e.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/marlu/ccZUJyWS.res -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lgcc --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_4bd4e /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o -lstdc++ -lm -lgcc_s -lgcc -lc -lgcc_s -lgcc /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/marlu/ccZUJyWS.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_4bd4e] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [CMakeFiles/cmTC_4bd4e.dir/CMakeCXXCompilerABI.cpp.o] ==> ignore
+          arg [-lstdc++] ==> lib [stdc++]
+          arg [-lm] ==> lib [m]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [-lc] ==> lib [c]
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [-lgcc] ==> lib [gcc]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [stdc++;m;gcc_s;gcc;c;gcc_s;gcc]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_73012/fast && /bin/gmake  -f CMakeFiles/cmTC_73012.dir/build.make CMakeFiles/cmTC_73012.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT'
+        Building C object CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o
+        /bin/cc   -v -o CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Using built-in specs.
+        COLLECT_GCC=/bin/cc
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) 
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_73012.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/marlu/cca5BIgC.s
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"
+        ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"
+        #include "..." search starts here:
+        #include <...> search starts here:
+         /usr/lib/gcc/x86_64-redhat-linux/11/include
+         /usr/local/include
+         /usr/include
+        End of search list.
+        GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)
+        	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5), GMP version 6.2.0, MPFR version 4.1.0-p9, MPC version 1.2.1, isl version none
+        GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072
+        Compiler executable checksum: 4414b45fdf7cee70037cf83f40d3c8f3
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/'
+         as -v --64 -o CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o /tmp/marlu/cca5BIgC.s
+        GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-54.el9
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.'
+        Linking C executable cmTC_73012
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73012.dir/link.txt --verbose=1
+        /bin/cc  -v -rdynamic CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -o cmTC_73012 
+        Using built-in specs.
+        COLLECT_GCC=/bin/cc
+        COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper
+        OFFLOAD_TARGET_NAMES=nvptx-none
+        OFFLOAD_TARGET_DEFAULT=1
+        Target: x86_64-redhat-linux
+        Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c,c++,fortran,lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1
+        Thread model: posix
+        Supported LTO compression algorithms: zlib zstd
+        gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) 
+        COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/
+        LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_73012' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_73012.'
+         /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/marlu/cc0M9yam.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_73012 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o
+        COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_73012' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_73012.'
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT'
+        
+      exitCode: 0
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:127 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit include dir info: rv=done
+        found start of include info
+        found start of implicit include info
+          add: [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+          add: [/usr/local/include]
+          add: [/usr/include]
+        end of search list found
+        collapse include dir [/usr/lib/gcc/x86_64-redhat-linux/11/include] ==> [/usr/lib/gcc/x86_64-redhat-linux/11/include]
+        collapse include dir [/usr/local/include] ==> [/usr/local/include]
+        collapse include dir [/usr/include] ==> [/usr/include]
+        implicit include dirs: [/usr/lib/gcc/x86_64-redhat-linux/11/include;/usr/local/include;/usr/include]
+      
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/CMakeDetermineCompilerABI.cmake:152 (message)"
+      - "/usr/share/cmake/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:9 (project)"
+    message: |
+      Parsed C implicit link information:
+        link line regex: [^( *|.*[/\\])(ld|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
+        ignore line: [Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT]
+        ignore line: []
+        ignore line: [Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_73012/fast && /bin/gmake  -f CMakeFiles/cmTC_73012.dir/build.make CMakeFiles/cmTC_73012.dir/build]
+        ignore line: [gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-boH2mT']
+        ignore line: [Building C object CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o]
+        ignore line: [/bin/cc   -v -o CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/cc]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) ]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/']
+        ignore line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/cc1 -quiet -v /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_73012.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mtune=generic -march=x86-64-v2 -version -o /tmp/marlu/cca5BIgC.s]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/include-fixed"]
+        ignore line: [ignoring nonexistent directory "/usr/lib/gcc/x86_64-redhat-linux/11/../../../../x86_64-redhat-linux/include"]
+        ignore line: [#include "..." search starts here:]
+        ignore line: [#include <...> search starts here:]
+        ignore line: [ /usr/lib/gcc/x86_64-redhat-linux/11/include]
+        ignore line: [ /usr/local/include]
+        ignore line: [ /usr/include]
+        ignore line: [End of search list.]
+        ignore line: [GNU C17 (GCC) version 11.5.0 20240719 (Red Hat 11.5.0-5) (x86_64-redhat-linux)]
+        ignore line: [	compiled by GNU C version 11.5.0 20240719 (Red Hat 11.5.0-5)  GMP version 6.2.0  MPFR version 4.1.0-p9  MPC version 1.2.1  isl version none]
+        ignore line: [GGC heuristics: --param ggc-min-expand=100 --param ggc-min-heapsize=131072]
+        ignore line: [Compiler executable checksum: 4414b45fdf7cee70037cf83f40d3c8f3]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/']
+        ignore line: [ as -v --64 -o CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o /tmp/marlu/cca5BIgC.s]
+        ignore line: [GNU assembler version 2.35.2 (x86_64-redhat-linux) using BFD version version 2.35.2-54.el9]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-o' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o' '-c' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.']
+        ignore line: [Linking C executable cmTC_73012]
+        ignore line: [/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_73012.dir/link.txt --verbose=1]
+        ignore line: [/bin/cc  -v -rdynamic CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -o cmTC_73012 ]
+        ignore line: [Using built-in specs.]
+        ignore line: [COLLECT_GCC=/bin/cc]
+        ignore line: [COLLECT_LTO_WRAPPER=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper]
+        ignore line: [OFFLOAD_TARGET_NAMES=nvptx-none]
+        ignore line: [OFFLOAD_TARGET_DEFAULT=1]
+        ignore line: [Target: x86_64-redhat-linux]
+        ignore line: [Configured with: ../configure --enable-bootstrap --enable-host-pie --enable-host-bind-now --enable-languages=c c++ fortran lto --prefix=/usr --mandir=/usr/share/man --infodir=/usr/share/info --with-bugurl=http://bugs.almalinux.org/ --enable-shared --enable-threads=posix --enable-checking=release --with-system-zlib --enable-__cxa_atexit --disable-libunwind-exceptions --enable-gnu-unique-object --enable-linker-build-id --with-gcc-major-version-only --enable-plugin --enable-initfini-array --without-isl --enable-multilib --with-linker-hash-style=gnu --enable-offload-targets=nvptx-none --without-cuda-driver --enable-gnu-indirect-function --enable-cet --with-tune=generic --with-arch_64=x86-64-v2 --with-arch_32=x86-64 --build=x86_64-redhat-linux --with-build-config=bootstrap-lto --enable-link-serialization=1]
+        ignore line: [Thread model: posix]
+        ignore line: [Supported LTO compression algorithms: zlib zstd]
+        ignore line: [gcc version 11.5.0 20240719 (Red Hat 11.5.0-5) (GCC) ]
+        ignore line: [COMPILER_PATH=/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/11/:/usr/libexec/gcc/x86_64-redhat-linux/:/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/]
+        ignore line: [LIBRARY_PATH=/usr/lib/gcc/x86_64-redhat-linux/11/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/:/lib/../lib64/:/usr/lib/../lib64/:/usr/lib/gcc/x86_64-redhat-linux/11/../../../:/lib/:/usr/lib/]
+        ignore line: [COLLECT_GCC_OPTIONS='-v' '-rdynamic' '-o' 'cmTC_73012' '-mtune=generic' '-march=x86-64-v2' '-dumpdir' 'cmTC_73012.']
+        link line: [ /usr/libexec/gcc/x86_64-redhat-linux/11/collect2 -plugin /usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so -plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper -plugin-opt=-fresolution=/tmp/marlu/cc0M9yam.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lgcc_s --build-id --no-add-needed --eh-frame-hdr --hash-style=gnu -m elf_x86_64 -export-dynamic -dynamic-linker /lib64/ld-linux-x86-64.so.2 -o cmTC_73012 /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o /usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o -L/usr/lib/gcc/x86_64-redhat-linux/11 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib/gcc/x86_64-redhat-linux/11/../../.. CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o -lgcc --push-state --as-needed -lgcc_s --pop-state -lc -lgcc --push-state --as-needed -lgcc_s --pop-state /usr/lib/gcc/x86_64-redhat-linux/11/crtend.o /usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/collect2] ==> ignore
+          arg [-plugin] ==> ignore
+          arg [/usr/libexec/gcc/x86_64-redhat-linux/11/liblto_plugin.so] ==> ignore
+          arg [-plugin-opt=/usr/libexec/gcc/x86_64-redhat-linux/11/lto-wrapper] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/marlu/cc0M9yam.res] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [-plugin-opt=-pass-through=-lc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
+          arg [-plugin-opt=-pass-through=-lgcc_s] ==> ignore
+          arg [--build-id] ==> ignore
+          arg [--no-add-needed] ==> ignore
+          arg [--eh-frame-hdr] ==> ignore
+          arg [--hash-style=gnu] ==> ignore
+          arg [-m] ==> ignore
+          arg [elf_x86_64] ==> ignore
+          arg [-export-dynamic] ==> ignore
+          arg [-dynamic-linker] ==> ignore
+          arg [/lib64/ld-linux-x86-64.so.2] ==> ignore
+          arg [-o] ==> ignore
+          arg [cmTC_73012] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64]
+          arg [-L/lib/../lib64] ==> dir [/lib/../lib64]
+          arg [-L/usr/lib/../lib64] ==> dir [/usr/lib/../lib64]
+          arg [-L/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..]
+          arg [CMakeFiles/cmTC_73012.dir/CMakeCCompilerABI.c.o] ==> ignore
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [-lc] ==> lib [c]
+          arg [-lgcc] ==> lib [gcc]
+          arg [--push-state] ==> ignore
+          arg [--as-needed] ==> ignore
+          arg [-lgcc_s] ==> lib [gcc_s]
+          arg [--pop-state] ==> ignore
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o]
+          arg [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crt1.o] ==> [/usr/lib64/crt1.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crti.o] ==> [/usr/lib64/crti.o]
+        collapse obj [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64/crtn.o] ==> [/usr/lib64/crtn.o]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11] ==> [/usr/lib/gcc/x86_64-redhat-linux/11]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../../../lib64] ==> [/usr/lib64]
+        collapse library dir [/lib/../lib64] ==> [/lib64]
+        collapse library dir [/usr/lib/../lib64] ==> [/usr/lib64]
+        collapse library dir [/usr/lib/gcc/x86_64-redhat-linux/11/../../..] ==> [/usr/lib]
+        implicit libs: [gcc;gcc_s;c;gcc;gcc_s]
+        implicit objs: [/usr/lib64/crt1.o;/usr/lib64/crti.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtbegin.o;/usr/lib/gcc/x86_64-redhat-linux/11/crtend.o;/usr/lib64/crtn.o]
+        implicit dirs: [/usr/lib/gcc/x86_64-redhat-linux/11;/usr/lib64;/lib64;/usr/lib]
+        implicit fwks: []
+      
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/Internal/CheckSourceCompiles.cmake:101 (try_compile)"
+      - "/usr/share/cmake/Modules/CheckCSourceCompiles.cmake:76 (cmake_check_source_compiles)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:97 (CHECK_C_SOURCE_COMPILES)"
+      - "/usr/share/cmake/Modules/FindThreads.cmake:163 (_threads_check_libc)"
+      - "src/cmake/configure.cmake:10 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    checks:
+      - "Performing Test CMAKE_HAVE_LIBC_PTHREAD"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "CMAKE_HAVE_LIBC_PTHREAD"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_7fe40/fast && /bin/gmake  -f CMakeFiles/cmTC_7fe40.dir/build.make CMakeFiles/cmTC_7fe40.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE'
+        Building C object CMakeFiles/cmTC_7fe40.dir/src.c.o
+        /bin/cc -DCMAKE_HAVE_LIBC_PTHREAD   -o CMakeFiles/cmTC_7fe40.dir/src.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE/src.c
+        Linking C executable cmTC_7fe40
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_7fe40.dir/link.txt --verbose=1
+        /bin/cc -rdynamic CMakeFiles/cmTC_7fe40.dir/src.c.o -o cmTC_7fe40 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-i8jYGE'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_54faf/fast && /bin/gmake  -f CMakeFiles/cmTC_54faf.dir/build.make CMakeFiles/cmTC_54faf.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O'
+        Building C object CMakeFiles/cmTC_54faf.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_54faf.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O/test_mpi.c
+        Linking C executable cmTC_54faf
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_54faf.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_54faf.dir/test_mpi.c.o -o cmTC_54faf  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-OO213O'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_77495/fast && /bin/gmake  -f CMakeFiles/cmTC_77495.dir/build.make CMakeFiles/cmTC_77495.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP'
+        Building CXX object CMakeFiles/cmTC_77495.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_77495.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP/test_mpi.cpp
+        Linking CXX executable cmTC_77495
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_77495.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_77495.dir/test_mpi.cpp.o -o cmTC_77495  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-PZcMdP'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_46b70/fast && /bin/gmake  -f CMakeFiles/cmTC_46b70.dir/build.make CMakeFiles/cmTC_46b70.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD'
+        Building CXX object CMakeFiles/cmTC_46b70.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_46b70.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD/test_mpi.cpp
+        Linking CXX executable cmTC_46b70
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_46b70.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_46b70.dir/test_mpi.cpp.o -o cmTC_46b70  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-AddbpD'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_69bab/fast && /bin/gmake  -f CMakeFiles/cmTC_69bab.dir/build.make CMakeFiles/cmTC_69bab.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW'
+        Building C object CMakeFiles/cmTC_69bab.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_69bab.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW/test_mpi.c
+        Linking C executable cmTC_69bab
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_69bab.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_69bab.dir/test_mpi.c.o -o cmTC_69bab  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mLLgdW'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_e669f/fast && /bin/gmake  -f CMakeFiles/cmTC_e669f.dir/build.make CMakeFiles/cmTC_e669f.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN'
+        Building CXX object CMakeFiles/cmTC_e669f.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_e669f.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN/test_mpi.cpp
+        Linking CXX executable cmTC_e669f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e669f.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_e669f.dir/test_mpi.cpp.o -o cmTC_e669f  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-R1KvFN'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_9b53d/fast && /bin/gmake  -f CMakeFiles/cmTC_9b53d.dir/build.make CMakeFiles/cmTC_9b53d.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp'
+        Building CXX object CMakeFiles/cmTC_9b53d.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_9b53d.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp/test_mpi.cpp
+        Linking CXX executable cmTC_9b53d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9b53d.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_9b53d.dir/test_mpi.cpp.o -o cmTC_9b53d  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-oVHPrp'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_2a969/fast && /bin/gmake  -f CMakeFiles/cmTC_2a969.dir/build.make CMakeFiles/cmTC_2a969.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl'
+        Building C object CMakeFiles/cmTC_2a969.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_2a969.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl/test_mpi.c
+        Linking C executable cmTC_2a969
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2a969.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_2a969.dir/test_mpi.c.o -o cmTC_2a969  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-pKZzZl'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_39a3a/fast && /bin/gmake  -f CMakeFiles/cmTC_39a3a.dir/build.make CMakeFiles/cmTC_39a3a.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo'
+        Building CXX object CMakeFiles/cmTC_39a3a.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_39a3a.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo/test_mpi.cpp
+        Linking CXX executable cmTC_39a3a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_39a3a.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_39a3a.dir/test_mpi.cpp.o -o cmTC_39a3a  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Au9Fbo'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_c8a0a/fast && /bin/gmake  -f CMakeFiles/cmTC_c8a0a.dir/build.make CMakeFiles/cmTC_c8a0a.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK'
+        Building CXX object CMakeFiles/cmTC_c8a0a.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_c8a0a.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK/test_mpi.cpp
+        Linking CXX executable cmTC_c8a0a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c8a0a.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_c8a0a.dir/test_mpi.cpp.o -o cmTC_c8a0a  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-lqErnK'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_32656/fast && /bin/gmake  -f CMakeFiles/cmTC_32656.dir/build.make CMakeFiles/cmTC_32656.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp'
+        Building C object CMakeFiles/cmTC_32656.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_32656.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp/test_mpi.c
+        Linking C executable cmTC_32656
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_32656.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_32656.dir/test_mpi.c.o -o cmTC_32656  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-V0neNp'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_c433f/fast && /bin/gmake  -f CMakeFiles/cmTC_c433f.dir/build.make CMakeFiles/cmTC_c433f.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4'
+        Building CXX object CMakeFiles/cmTC_c433f.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_c433f.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4/test_mpi.cpp
+        Linking CXX executable cmTC_c433f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c433f.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_c433f.dir/test_mpi.cpp.o -o cmTC_c433f  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Qes1Q4'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_8f35d/fast && /bin/gmake  -f CMakeFiles/cmTC_8f35d.dir/build.make CMakeFiles/cmTC_8f35d.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j'
+        Building CXX object CMakeFiles/cmTC_8f35d.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_8f35d.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j/test_mpi.cpp
+        Linking CXX executable cmTC_8f35d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8f35d.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_8f35d.dir/test_mpi.cpp.o -o cmTC_8f35d  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-udds9j'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_63f43/fast && /bin/gmake  -f CMakeFiles/cmTC_63f43.dir/build.make CMakeFiles/cmTC_63f43.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS'
+        Building C object CMakeFiles/cmTC_63f43.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_63f43.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS/test_mpi.c
+        Linking C executable cmTC_63f43
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_63f43.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_63f43.dir/test_mpi.c.o -o cmTC_63f43  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-bGVJzS'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_0d0e1/fast && /bin/gmake  -f CMakeFiles/cmTC_0d0e1.dir/build.make CMakeFiles/cmTC_0d0e1.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2'
+        Building CXX object CMakeFiles/cmTC_0d0e1.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_0d0e1.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2/test_mpi.cpp
+        Linking CXX executable cmTC_0d0e1
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0d0e1.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_0d0e1.dir/test_mpi.cpp.o -o cmTC_0d0e1  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ytFiU2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_c6d10/fast && /bin/gmake  -f CMakeFiles/cmTC_c6d10.dir/build.make CMakeFiles/cmTC_c6d10.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK'
+        Building CXX object CMakeFiles/cmTC_c6d10.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_c6d10.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK/test_mpi.cpp
+        Linking CXX executable cmTC_c6d10
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c6d10.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_c6d10.dir/test_mpi.cpp.o -o cmTC_c6d10  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-UMQlqK'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_27f3c/fast && /bin/gmake  -f CMakeFiles/cmTC_27f3c.dir/build.make CMakeFiles/cmTC_27f3c.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z'
+        Building C object CMakeFiles/cmTC_27f3c.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_27f3c.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z/test_mpi.c
+        Linking C executable cmTC_27f3c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_27f3c.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_27f3c.dir/test_mpi.c.o -o cmTC_27f3c  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Gcdx5z'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_13793/fast && /bin/gmake  -f CMakeFiles/cmTC_13793.dir/build.make CMakeFiles/cmTC_13793.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8'
+        Building CXX object CMakeFiles/cmTC_13793.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_13793.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8/test_mpi.cpp
+        Linking CXX executable cmTC_13793
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_13793.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_13793.dir/test_mpi.cpp.o -o cmTC_13793  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7kESh8'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_f8fbb/fast && /bin/gmake  -f CMakeFiles/cmTC_f8fbb.dir/build.make CMakeFiles/cmTC_f8fbb.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5'
+        Building CXX object CMakeFiles/cmTC_f8fbb.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_f8fbb.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5/test_mpi.cpp
+        Linking CXX executable cmTC_f8fbb
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f8fbb.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_f8fbb.dir/test_mpi.cpp.o -o cmTC_f8fbb  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-86rmc5'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_e5271/fast && /bin/gmake  -f CMakeFiles/cmTC_e5271.dir/build.make CMakeFiles/cmTC_e5271.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH'
+        Building C object CMakeFiles/cmTC_e5271.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_e5271.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH/test_mpi.c
+        Linking C executable cmTC_e5271
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e5271.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_e5271.dir/test_mpi.c.o -o cmTC_e5271  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-YXlbaH'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_0dac7/fast && /bin/gmake  -f CMakeFiles/cmTC_0dac7.dir/build.make CMakeFiles/cmTC_0dac7.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr'
+        Building CXX object CMakeFiles/cmTC_0dac7.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_0dac7.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr/test_mpi.cpp
+        Linking CXX executable cmTC_0dac7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0dac7.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_0dac7.dir/test_mpi.cpp.o -o cmTC_0dac7  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-6R9Dvr'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_72915/fast && /bin/gmake  -f CMakeFiles/cmTC_72915.dir/build.make CMakeFiles/cmTC_72915.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd'
+        Building CXX object CMakeFiles/cmTC_72915.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_72915.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd/test_mpi.cpp
+        Linking CXX executable cmTC_72915
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_72915.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_72915.dir/test_mpi.cpp.o -o cmTC_72915  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-kSSUdd'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_5ba42/fast && /bin/gmake  -f CMakeFiles/cmTC_5ba42.dir/build.make CMakeFiles/cmTC_5ba42.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd'
+        Building C object CMakeFiles/cmTC_5ba42.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_5ba42.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd/test_mpi.c
+        Linking C executable cmTC_5ba42
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5ba42.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_5ba42.dir/test_mpi.c.o -o cmTC_5ba42  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-01v1wd'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_6bcf4/fast && /bin/gmake  -f CMakeFiles/cmTC_6bcf4.dir/build.make CMakeFiles/cmTC_6bcf4.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g'
+        Building CXX object CMakeFiles/cmTC_6bcf4.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_6bcf4.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g/test_mpi.cpp
+        Linking CXX executable cmTC_6bcf4
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6bcf4.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_6bcf4.dir/test_mpi.cpp.o -o cmTC_6bcf4  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LInM1g'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_d18e7/fast && /bin/gmake  -f CMakeFiles/cmTC_d18e7.dir/build.make CMakeFiles/cmTC_d18e7.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU'
+        Building CXX object CMakeFiles/cmTC_d18e7.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_d18e7.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU/test_mpi.cpp
+        Linking CXX executable cmTC_d18e7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d18e7.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_d18e7.dir/test_mpi.cpp.o -o cmTC_d18e7  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-ajD0hU'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_5f74c/fast && /bin/gmake  -f CMakeFiles/cmTC_5f74c.dir/build.make CMakeFiles/cmTC_5f74c.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A'
+        Building C object CMakeFiles/cmTC_5f74c.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_5f74c.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A/test_mpi.c
+        Linking C executable cmTC_5f74c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5f74c.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_5f74c.dir/test_mpi.c.o -o cmTC_5f74c  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-LG4g4A'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_2d0be/fast && /bin/gmake  -f CMakeFiles/cmTC_2d0be.dir/build.make CMakeFiles/cmTC_2d0be.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk'
+        Building CXX object CMakeFiles/cmTC_2d0be.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_2d0be.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk/test_mpi.cpp
+        Linking CXX executable cmTC_2d0be
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2d0be.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_2d0be.dir/test_mpi.cpp.o -o cmTC_2d0be  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-uXqBZk'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_deba2/fast && /bin/gmake  -f CMakeFiles/cmTC_deba2.dir/build.make CMakeFiles/cmTC_deba2.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV'
+        Building CXX object CMakeFiles/cmTC_deba2.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_deba2.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV/test_mpi.cpp
+        Linking CXX executable cmTC_deba2
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_deba2.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_deba2.dir/test_mpi.cpp.o -o cmTC_deba2  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-9p9PqV'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_e7bdc/fast && /bin/gmake  -f CMakeFiles/cmTC_e7bdc.dir/build.make CMakeFiles/cmTC_e7bdc.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2'
+        Building C object CMakeFiles/cmTC_e7bdc.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_e7bdc.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2/test_mpi.c
+        Linking C executable cmTC_e7bdc
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_e7bdc.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_e7bdc.dir/test_mpi.c.o -o cmTC_e7bdc  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-u5QZB2'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_1da7f/fast && /bin/gmake  -f CMakeFiles/cmTC_1da7f.dir/build.make CMakeFiles/cmTC_1da7f.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju'
+        Building CXX object CMakeFiles/cmTC_1da7f.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_1da7f.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju/test_mpi.cpp
+        Linking CXX executable cmTC_1da7f
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_1da7f.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_1da7f.dir/test_mpi.cpp.o -o cmTC_1da7f  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zalju'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_79d70/fast && /bin/gmake  -f CMakeFiles/cmTC_79d70.dir/build.make CMakeFiles/cmTC_79d70.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd'
+        Building CXX object CMakeFiles/cmTC_79d70.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_79d70.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd/test_mpi.cpp
+        Linking CXX executable cmTC_79d70
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_79d70.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_79d70.dir/test_mpi.cpp.o -o cmTC_79d70  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-B73Vyd'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_0a694/fast && /bin/gmake  -f CMakeFiles/cmTC_0a694.dir/build.make CMakeFiles/cmTC_0a694.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U'
+        Building C object CMakeFiles/cmTC_0a694.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_0a694.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U/test_mpi.c
+        Linking C executable cmTC_0a694
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_0a694.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_0a694.dir/test_mpi.c.o -o cmTC_0a694  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-Ibss7U'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_9cf5a/fast && /bin/gmake  -f CMakeFiles/cmTC_9cf5a.dir/build.make CMakeFiles/cmTC_9cf5a.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b'
+        Building CXX object CMakeFiles/cmTC_9cf5a.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_9cf5a.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b/test_mpi.cpp
+        Linking CXX executable cmTC_9cf5a
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9cf5a.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_9cf5a.dir/test_mpi.cpp.o -o cmTC_9cf5a  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-l6NB6b'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_d4999/fast && /bin/gmake  -f CMakeFiles/cmTC_d4999.dir/build.make CMakeFiles/cmTC_d4999.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW'
+        Building CXX object CMakeFiles/cmTC_d4999.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_d4999.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW/test_mpi.cpp
+        Linking CXX executable cmTC_d4999
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d4999.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_d4999.dir/test_mpi.cpp.o -o cmTC_d4999  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-7zXLqW'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_9df44/fast && /bin/gmake  -f CMakeFiles/cmTC_9df44.dir/build.make CMakeFiles/cmTC_9df44.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E'
+        Building C object CMakeFiles/cmTC_9df44.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_9df44.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E/test_mpi.c
+        Linking C executable cmTC_9df44
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_9df44.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_9df44.dir/test_mpi.c.o -o cmTC_9df44  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-q28y6E'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_f4b7d/fast && /bin/gmake  -f CMakeFiles/cmTC_f4b7d.dir/build.make CMakeFiles/cmTC_f4b7d.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V'
+        Building CXX object CMakeFiles/cmTC_f4b7d.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_f4b7d.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V/test_mpi.cpp
+        Linking CXX executable cmTC_f4b7d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_f4b7d.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_f4b7d.dir/test_mpi.cpp.o -o cmTC_f4b7d  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-nh5Z3V'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_01b7c/fast && /bin/gmake  -f CMakeFiles/cmTC_01b7c.dir/build.make CMakeFiles/cmTC_01b7c.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9'
+        Building CXX object CMakeFiles/cmTC_01b7c.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_01b7c.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9/test_mpi.cpp
+        Linking CXX executable cmTC_01b7c
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_01b7c.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_01b7c.dir/test_mpi.cpp.o -o cmTC_01b7c  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-sOQOn9'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_566ea/fast && /bin/gmake  -f CMakeFiles/cmTC_566ea.dir/build.make CMakeFiles/cmTC_566ea.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA'
+        Building C object CMakeFiles/cmTC_566ea.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_566ea.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA/test_mpi.c
+        Linking C executable cmTC_566ea
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_566ea.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_566ea.dir/test_mpi.c.o -o cmTC_566ea  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-BrhOlA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_a00c9/fast && /bin/gmake  -f CMakeFiles/cmTC_a00c9.dir/build.make CMakeFiles/cmTC_a00c9.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA'
+        Building CXX object CMakeFiles/cmTC_a00c9.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_a00c9.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA/test_mpi.cpp
+        Linking CXX executable cmTC_a00c9
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a00c9.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_a00c9.dir/test_mpi.cpp.o -o cmTC_a00c9  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-fjruHA'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_5d6ab/fast && /bin/gmake  -f CMakeFiles/cmTC_5d6ab.dir/build.make CMakeFiles/cmTC_5d6ab.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF'
+        Building CXX object CMakeFiles/cmTC_5d6ab.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_5d6ab.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF/test_mpi.cpp
+        Linking CXX executable cmTC_5d6ab
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_5d6ab.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_5d6ab.dir/test_mpi.cpp.o -o cmTC_5d6ab  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-rLsyuF'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_8d62d/fast && /bin/gmake  -f CMakeFiles/cmTC_8d62d.dir/build.make CMakeFiles/cmTC_8d62d.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y'
+        Building C object CMakeFiles/cmTC_8d62d.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_8d62d.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y/test_mpi.c
+        Linking C executable cmTC_8d62d
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_8d62d.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_8d62d.dir/test_mpi.c.o -o cmTC_8d62d  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-P35t5y'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_3f1d7/fast && /bin/gmake  -f CMakeFiles/cmTC_3f1d7.dir/build.make CMakeFiles/cmTC_3f1d7.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO'
+        Building CXX object CMakeFiles/cmTC_3f1d7.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_3f1d7.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO/test_mpi.cpp
+        Linking CXX executable cmTC_3f1d7
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_3f1d7.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_3f1d7.dir/test_mpi.cpp.o -o cmTC_3f1d7  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-vyI3LO'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_a0f97/fast && /bin/gmake  -f CMakeFiles/cmTC_a0f97.dir/build.make CMakeFiles/cmTC_a0f97.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ'
+        Building CXX object CMakeFiles/cmTC_a0f97.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_a0f97.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ/test_mpi.cpp
+        Linking CXX executable cmTC_a0f97
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_a0f97.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_a0f97.dir/test_mpi.cpp.o -o cmTC_a0f97  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-4PFhrJ'
+        
+      exitCode: 0
+...
+
+---
+events:
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for C in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU"
+    cmakeVariables:
+      CMAKE_C_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_C_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_2f67e/fast && /bin/gmake  -f CMakeFiles/cmTC_2f67e.dir/build.make CMakeFiles/cmTC_2f67e.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU'
+        Building C object CMakeFiles/cmTC_2f67e.dir/test_mpi.c.o
+        /bin/cc  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_2f67e.dir/test_mpi.c.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU/test_mpi.c
+        Linking C executable cmTC_2f67e
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_2f67e.dir/link.txt --verbose=1
+        /bin/cc -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_2f67e.dir/test_mpi.c.o -o cmTC_2f67e  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-cSVJNU'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1322 (_MPI_try_staged_settings)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1645 (_MPI_check_lang_works)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode normal"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_normal"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_c3059/fast && /bin/gmake  -f CMakeFiles/cmTC_c3059.dir/build.make CMakeFiles/cmTC_c3059.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3'
+        Building CXX object CMakeFiles/cmTC_c3059.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_c3059.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3/test_mpi.cpp
+        Linking CXX executable cmTC_c3059
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_c3059.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_c3059.dir/test_mpi.cpp.o -o cmTC_c3059  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-8x7vh3'
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1278 (try_compile)"
+      - "/usr/share/cmake/Modules/FindMPI.cmake:1672 (_MPI_try_staged_settings)"
+      - "src/cmake/configure.cmake:15 (find_package)"
+      - "CMakeLists.txt:71 (include)"
+    description: "The MPI test test_mpi for CXX in mode MPICXX"
+    directories:
+      source: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu"
+      binary: "/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: ""
+      CMAKE_MODULE_PATH: "/lhome/ific/m/marlu/cosmolattice/src/cmake/"
+    buildResult:
+      variable: "MPI_RESULT_CXX_test_mpi_MPICXX"
+      cached: true
+      stdout: |
+        Change Dir: /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu
+        
+        Run Build Command(s):/usr/bin/cmake -E env VERBOSE=1 /bin/gmake -f Makefile cmTC_d2dd0/fast && /bin/gmake  -f CMakeFiles/cmTC_d2dd0.dir/build.make CMakeFiles/cmTC_d2dd0.dir/build
+        gmake[1]: Entering directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu'
+        Building CXX object CMakeFiles/cmTC_d2dd0.dir/test_mpi.cpp.o
+        /bin/c++  -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi -isystem /usr/mpi/gcc/openmpi-4.1.7rc1/include/openmpi/opal/mca/hwloc/hwloc201/hwloc/include  -o CMakeFiles/cmTC_d2dd0.dir/test_mpi.cpp.o -c /lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu/test_mpi.cpp
+        Linking CXX executable cmTC_d2dd0
+        /usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_d2dd0.dir/link.txt --verbose=1
+        /bin/c++ -rdynamic -Wl,-rpath -Wl,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 -Wl,--enable-new-dtags CMakeFiles/cmTC_d2dd0.dir/test_mpi.cpp.o -o cmTC_d2dd0  -Wl,-rpath,/usr/mpi/gcc/openmpi-4.1.7rc1/lib64 /usr/mpi/gcc/openmpi-4.1.7rc1/lib64/libmpi.so 
+        gmake[1]: Leaving directory '/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/CMakeScratch/TryCompile-mjKMbu'
+        
+      exitCode: 0
+...

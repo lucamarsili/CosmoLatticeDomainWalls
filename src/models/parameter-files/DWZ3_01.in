@@ -1,0 +1,43 @@
+
+#Output
+outputfile = /lustre/ific.uv.es/prj/gl/som.somlat/lmar/buildZ3_1024_24_01/
+
+#Evolution
+expansion = true
+evolver = LF
+#Lattice
+N = 1024
+dt = 0.01
+lSide = 24
+
+#Times
+t0=0
+tOutputFreq = 0.1
+tOutputInfreq = 4
+tOutputRareFreq = 4
+tMax = 50 #should start breaking from 24
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+#spectraverbosity=2
+#print_header = true
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.0547723 #GeV
+
+energy_snapshot = S_C E_S_K E_S_G E_V
+#IC
+kCutOff = 3
+initial_amplitudes =  0 0    # homogeneous amplitudes in GeV
+initial_momenta = 0 0    # homogeneous amplitudes in GeV2
+
+#Model Parameters
+lambda1 = 0.003
+lambda2 = 0.00516398 #beta = 1
+mu =0.0547723

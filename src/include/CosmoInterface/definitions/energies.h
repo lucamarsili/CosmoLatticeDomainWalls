@@ -32,6 +32,12 @@ namespace TempLat {
         // EXAMPLE: The kinetic energy of a given field can be called as "Energies::kineticS(model,FieldFunctionals::pi2S(model,i))" (see energiesmeasurer.h for other examples)
         // In this case, FieldFunctionals::pi2S gives <pi^2>, with pi=a^(3-alpha)*f' the momenta, and f' the time-derivative. Then, Energies::kineticS multiplies this by (1/2)*a^(-6) to obtain the energy.
 
+        template<class Model>
+        static inline auto TypeIMeasure(Model& model) { //scaling egime type I
+            return 1;
+        }
+
+
         template<class Model, class T>  
         static inline auto kineticS(Model& model, T fldf) {  // scalar singlet: kinetic energy
             return 0.5 * fldf* pow<-6>(model.aI);

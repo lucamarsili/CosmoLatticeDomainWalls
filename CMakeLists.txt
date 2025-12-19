@@ -49,7 +49,7 @@ include(src/cmake/auto_install_paths.cmake)
 
 #if you have an exotic FFTW3, you can also help cmake by adding the path below.
 
-set(MYFFTW3_PATH "insert/here" CACHE STRING "FFTW3 guess path")
+set(MYFFTW3_PATH "/usr/include/fftw3.h" CACHE STRING "FFTW3 guess path")
 
 #if you have an exotic HDF5, you can also help cmake by adding the path below.
 

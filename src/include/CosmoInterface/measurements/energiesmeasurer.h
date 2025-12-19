@@ -32,12 +32,15 @@ namespace TempLat {
         /* Put public methods here. These should change very little over time. */
         template <typename Model>
         EnergiesMeasurer(Model& model, FilesManager& filesManager, const RunParameters<T>& par, bool append) :
-               amIRoot( model.getToolBox()->amIRoot()),
+                amIRoot( model.getToolBox()->amIRoot()),
+                lSide(par.lSide),
+                N(par.N), 
                 expansion(par.expansion),
                 fixedBackground(par.fixedBackground), // boolean: if true, expansion is given by fixed background
                 Etot0(0),  // Initial total energy
                 energies(filesManager, "energies", amIRoot, append, getEnergyHeaders(model)),  // Output file for volume-average energies.
-                energyCons(filesManager,  "energy_conservation", amIRoot, append, getEnergyConsHeaders(), fixedBackground)   // Output file for checking energy conservation.
+                energyCons(filesManager,  "energy_conservation", amIRoot, append, getEnergyConsHeaders(), fixedBackground) 
+                 // Output file for checking energy conservation.
                 {
         }
 
@@ -48,6 +51,7 @@ namespace TempLat {
             T Etot = 0;  // stores total energy
             T Egrad = 0;  // auxiliary variable, stores grad energy
             T Ekin = 0;  // auxiliary variable, stores kinetic energy
+          
 
             // The "energies" functions contain the appropriate scale factor rescaling. Here we compute the energy species by species
 
@@ -103,8 +107,12 @@ namespace TempLat {
                     energies.addAverage(potTerm);
                     Etot += potTerm;
             );
-
+            T Scal =0; 
+            //Scal = scale(FieldFunctionals::Z3vacuumPhase(model));  //total scaling not normalized if fstar = proper Z3 vacuum
+            Scal = scale(FieldFunctionals::Z3vacuumPhase<Model, T>(model, lSide, N));
             energies.addAverage(Etot);
+            energies.addAverage(Scal);
+            //add a column there for scaling parameter
             energies.save();
 
             if(!fixedBackground) {  // Energy cannot be checked if expansion is fixed
@@ -160,6 +168,7 @@ namespace TempLat {
             );
 
             ret.emplace_back("E_tot");
+            ret.emplace_back("Scal_tot");
 
             return ret;
         }
@@ -181,7 +190,10 @@ namespace TempLat {
         }
 
         /* Put all member variables and private methods here. These may change arbitrarily. */
+        /* Put all member variables and private methods here. These may change arbitrarily. */
         const bool amIRoot;
+        T lSide;
+        int N;
         const bool expansion, fixedBackground;
         T Etot0;
 

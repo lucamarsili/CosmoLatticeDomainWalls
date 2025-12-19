@@ -1,0 +1,4 @@
+/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/cosmolattice.dir
+/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/clean-cmake.dir
+/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/edit_cache.dir
+/lhome/ific/m/marlu/cosmolattice/buildZ3_experiment/CMakeFiles/rebuild_cache.dir

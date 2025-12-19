@@ -52,6 +52,16 @@ namespace TempLat {
 
         return AveragerHelper<vType ,isComplexValued>::normalize(mT.getToolBox(),mSpaceType,reducedRes);
       }
+      vType computeScaling() // compute the scaling parameter, to modify!
+      {
+        vType selfResult = mSpaceType == SpaceStateInterface::SpaceType::Fourier ?
+            computeFourierSpace() :
+            computeConfigurationSpace() ;
+
+        vType reducedRes = mT.getToolBox()->mGroup.getBaseComm().computeAllSum(selfResult);
+
+        return AveragerHelper<vType ,isComplexValued>::normalize(mT.getToolBox(),mSpaceType,reducedRes);
+      }
 
       vType computeConfigurationSpace() {
         ptrdiff_t i = 0;

@@ -16,5 +16,7 @@
 #include "TempLat/lattice/algebra/operators/asinh.h"
 #include "TempLat/lattice/algebra/operators/log.h"
 #include "TempLat/lattice/algebra/operators/exponential.h"
-
+#include "TempLat/lattice/algebra/operators/atan2.h" // added file by me 
+#include "TempLat/lattice/algebra/operators/floor.h" // added file by me
+#include "TempLat/lattice/algebra/operators/equal.h" // added file by me
 

@@ -1,1 +1,5 @@
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/home/jorgejbb/Jorge/PhD/Cosmic_String/GW/cosmolattice/dependencies/MyLibs;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyFFTW3;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyPFFT;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyHDF5;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyLibs;")

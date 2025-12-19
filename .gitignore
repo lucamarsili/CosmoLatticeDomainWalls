@@ -1,1 +1,11 @@
-/build
+__pycache__/
+*.pyc
+*.so
+*.out
+*.log
+*.tmp
+.ipynb_checkpoints/
+.env
+.venv/
+dist/
+build/
