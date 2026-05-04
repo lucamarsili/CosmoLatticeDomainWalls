@@ -87,16 +87,86 @@ namespace TempLat {
             auto is01z = (index == 0) * (index_shift_z == 1);
             auto is01y = (index == 0) * (index_shift_y == 1);
             auto is01x = (index == 0) * (index_shift_x == 1);
-            auto numnormscal = sqrt(pow<2>(forwDiff(phi1, Tag<1>())) + pow<2>(forwDiff(phi1, Tag<2>())) + pow<2>(forwDiff(phi1, Tag<3>())) + pow<2>(forwDiff(phi2, Tag<1>())) + pow<2>(forwDiff(phi2, Tag<2>())) + pow<2>(forwDiff(phi2, Tag<3>())));
-            auto dennormscal = sqrt(pow<2>(forwDiff(phi1, Tag<1>())) + pow<2>(forwDiff(phi2, Tag<1>()))) + sqrt(pow<2>(forwDiff(phi1, Tag<2>())) + pow<2>(forwDiff(phi2, Tag<2>()))) + sqrt(pow<2>(forwDiff(phi1, Tag<3>())) + pow<2>(forwDiff(phi2, Tag<3>())));
+            auto numnormscal = sqrt(  pow<2>(forwDiff(theta, Tag<1>()))
+                            + pow<2>(forwDiff(theta, Tag<2>()))
+                            + pow<2>(forwDiff(theta, Tag<3>())));
+            auto dennormscal = sqrt(pow<2>(forwDiff(theta, Tag<1>())))
+                       + sqrt(pow<2>(forwDiff(theta, Tag<2>())))
+                       + sqrt(pow<2>(forwDiff(theta, Tag<3>())));
             //just remain to implement the normalization with the derivatives
             auto deltax = lSide/N; //will it make sense?
             return model.aI*pow<2>(deltax)*numnormscal/dennormscal*(is12z + is12y + is12x + is21z + is21y + is21x + is02z + is02y + is02x + is20z + is20y + is20x + is10z + is10y + is10x + is01z + is01y + is01x)/pow<3>(lSide); //This should be final version!
         }
         
+        // -------------------------------------------------------------------------
+        // ZNvacuumPhase: domain wall area for one wall type in a ZN model.
+        //
+        // Template parameters:
+        //   Nwall    – number of degenerate vacua
+        //   WallType – 1 = adjacent vacua, 2 = next-to-adjacent, …, floor(Nwall/2).
+        //              For even Nwall, type Nwall/2 connects antipodal vacua.
+        //
+        // Call this once per wall type from model::wallAreaTerm(Tag<WallType-1>).
+        // EnergiesMeasurer loops over all types and writes each as a separate column.
+        //
+        // Gradient correction (PRS formula):
+        //   Uses forwDiff of phi1, phi2 (= ∂_i phi, units field/length).
+        //   numnorm/dennorm is dimensionless (units cancel), Δx² provides area units.
+        //   This avoids the atan2 branch-cut discontinuity at θ=±π.
+        // -------------------------------------------------------------------------
+        template<int Nwall, int WallType, class Model, typename T>
+        static inline auto ZNvacuumPhase(Model& model, T lSide, int N)
+        {
+            static_assert(WallType >= 1 && WallType * 2 <= Nwall,
+                          "WallType must satisfy 1 <= WallType <= floor(Nwall/2)");
+
+            constexpr double PI = 3.14159265358979323846;
+
+            auto phi1 = model.fldS(0_c);
+            auto phi2 = model.fldS(1_c);
+
+            auto theta = atan2(phi2, phi1);  // (-π, π]
+
+            // Vacuum index in {0,…,Nwall-1}. Offset π/(2N) centres sectors on vacua θ=2πk/N.
+            // mod Nwall handles the atan2 branch cut cleanly for all N.
+            auto raw_index = floor(T(Nwall) * (theta + T(PI) + T(PI / Nwall)) / T(2.0 * PI));
+            auto index     = raw_index - T(Nwall) * floor(raw_index / T(Nwall));
+
+            auto dx = index - shift<1>(index);
+            auto dy = index - shift<2>(index);
+            auto dz = index - shift<3>(index);
+
+            // PRS gradient correction: numnorm/dennorm is dimensionless (1/length cancels).
+            auto numnorm = sqrt(pow<2>(forwDiff(phi1, Tag<1>())) + pow<2>(forwDiff(phi1, Tag<2>())) + pow<2>(forwDiff(phi1, Tag<3>()))
+                              + pow<2>(forwDiff(phi2, Tag<1>())) + pow<2>(forwDiff(phi2, Tag<2>())) + pow<2>(forwDiff(phi2, Tag<3>())));
+            auto dennorm = sqrt(pow<2>(forwDiff(phi1, Tag<1>())) + pow<2>(forwDiff(phi2, Tag<1>())))
+                         + sqrt(pow<2>(forwDiff(phi1, Tag<2>())) + pow<2>(forwDiff(phi2, Tag<2>())))
+                         + sqrt(pow<2>(forwDiff(phi1, Tag<3>())) + pow<2>(forwDiff(phi2, Tag<3>())));
+
+            auto deltax    = lSide / T(N);
+            auto area_elem = model.aI * pow<2>(deltax) * numnorm / (dennorm + T(1e-30)) / pow<3>(lSide);
+
+            // Crossing indicators: raw index diff is ±WallType (short arc) or ±(Nwall-WallType) (long arc).
+            // For the antipodal case WallType = Nwall/2, both arcs have equal length — use only ±WallType.
+            if constexpr (WallType * 2 == Nwall) {
+                auto crossings = (dx == T( WallType)) + (dx == T(-WallType))
+                               + (dy == T( WallType)) + (dy == T(-WallType))
+                               + (dz == T( WallType)) + (dz == T(-WallType));
+                return area_elem * crossings;
+            } else {
+                auto crossings = (dx == T( WallType))         + (dx == T(-WallType))
+                               + (dx == T( Nwall - WallType)) + (dx == T(WallType - Nwall))
+                               + (dy == T( WallType))         + (dy == T(-WallType))
+                               + (dy == T( Nwall - WallType)) + (dy == T(WallType - Nwall))
+                               + (dz == T( WallType))         + (dz == T(-WallType))
+                               + (dz == T( Nwall - WallType)) + (dz == T(WallType - Nwall));
+                return area_elem * crossings;
+            }
+        }
+
         ///to debug and then good!
 
-      
+
         ///Use shift!!!
 
 

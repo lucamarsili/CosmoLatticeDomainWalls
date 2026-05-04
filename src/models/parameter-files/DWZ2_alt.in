@@ -1,14 +1,12 @@
-#Output
-outputfile = ./
+outputfile = /mt/user-batch/dpasari/results_z3_b0/
 
 #Evolution
 expansion = true
 evolver = LF
-
 #Lattice
-N = 512
-dt = 0.02
-lSide = 80
+N = 256
+dt = 0.01
+lSide = 12
 
 #Times
 t0=0
@@ -17,7 +15,7 @@ tOutputInfreq = 1
 tOutputRareFreq = 1
 tMax = 30
 
-energy_snapshot = S_C E_S_K E_S_G E_V
+# energy_snapshot = S_C E_S_K E_S_G E_V
 
 
 #Spectra options
@@ -33,9 +31,6 @@ print_header = true
 fixedBackground = true
 omegaEoS = 0.333
 
-
-
-
 #IC
 kCutOff = 1
 initial_amplitudes = 0     # homogeneous amplitudes in GeV
@@ -43,6 +38,6 @@ initial_momenta = 0     # homogeneous amplitudes in GeV2
 
 #Model Parameters
 lambda = 0.003
-mu = 0.0547723
+eta = 0.0547723
 
 H0 = 0.0547723 #GeV sqrt(2)*mu

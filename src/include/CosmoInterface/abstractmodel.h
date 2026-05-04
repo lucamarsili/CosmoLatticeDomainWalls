@@ -51,6 +51,10 @@ namespace TempLat {
         // Number of dimensions (1,2,3). It can be changed in the model file.
         static constexpr size_t NDim = 3;
 
+        // Number of distinct wall types for ZN domain wall models (0 = no wall area measurement).
+        // Set to floor(N/2) in the model file for ZN models.
+        static constexpr size_t NWallTypes = 0;
+
 		// Coupling managers, they deal with the possible couplings between the gauge fields and complex scalars/SU2 doublets
         typedef CouplingsManager<NCScalars, NU1Flds> CsU1Couplings;   // couplings U(1) gauge-complex scalar
         typedef CouplingsManager<NSU2Doublet, NU1Flds> SU2DoubletU1Couplings;   // couplings U(1) gauge-SU2 doublet
@@ -64,12 +68,12 @@ namespace TempLat {
     // to what. All these parameters are passed as template argument to the model. In order to simplify the syntax,
     // the following macros allow the user to define a model simply by specifying a user-defined class, containing the appropriate variable.
 
-#define MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType) _ModelName, _ModelParsType::NPotTerms, _ModelParsType::NScalars,_ModelParsType::NCScalars,_ModelParsType::NU1Flds, _ModelParsType::NSU2Doublet,_ModelParsType::NSU2Flds,typename _ModelParsType::CsU1Couplings, typename _ModelParsType::SU2DoubletU1Couplings,typename _ModelParsType::SU2DoubletSU2Couplings,_FloatType,_ModelParsType::NDim
+#define MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType) _ModelName, _ModelParsType::NPotTerms, _ModelParsType::NScalars,_ModelParsType::NCScalars,_ModelParsType::NU1Flds, _ModelParsType::NSU2Doublet,_ModelParsType::NSU2Flds,typename _ModelParsType::CsU1Couplings, typename _ModelParsType::SU2DoubletU1Couplings,typename _ModelParsType::SU2DoubletSU2Couplings,_ModelParsType::NWallTypes,_FloatType,_ModelParsType::NDim
 #define MakeModelFloatType(_ModelName, _ModelParsType, _FloatType) AbstractModel<MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType)>
 #define MakeModel(_ModelName, _ModelParsType) AbstractModel<MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, double)>
 
     // Mother of all the models. The arguments are passed as template parameters.
-    template<class R, size_t NPOTTERMS ,size_t NS, size_t NC, size_t  NU1FLDS, size_t NSU2DOUBLET, size_t NSU2FLDS, typename CSU1COUPLINGS, typename SU2DOUBLETU1COUPLINGS, typename SU2DOUBLETSU2COUPLINGS,  typename T = double, int NDIM = 3>
+    template<class R, size_t NPOTTERMS ,size_t NS, size_t NC, size_t  NU1FLDS, size_t NSU2DOUBLET, size_t NSU2FLDS, typename CSU1COUPLINGS, typename SU2DOUBLETU1COUPLINGS, typename SU2DOUBLETSU2COUPLINGS, size_t NWALLTYPES = 0, typename T = double, int NDIM = 3>
     class AbstractModel {
     public:
         // We store all the arguments passed as template arguments into class variable. That way they can easily be
@@ -80,6 +84,7 @@ namespace TempLat {
         static constexpr size_t NSU2Doublet = NSU2DOUBLET;
         static constexpr size_t NU1 = NU1FLDS;
         static constexpr size_t NSU2 = NSU2FLDS;
+        static constexpr size_t NWallTypes = NWALLTYPES;
         static constexpr size_t NDim = NDIM;
         static constexpr size_t NGWs = 6;
         static constexpr T MPl = Constants::reducedMPlanck<T>;  // Reduced Planck mass, MPl=2.435*10^18 GeV

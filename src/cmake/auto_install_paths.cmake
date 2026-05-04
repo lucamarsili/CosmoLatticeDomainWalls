@@ -3,3 +3,5 @@ set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dep
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyPFFT;")
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyHDF5;")
 set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/lhome/ific/m/marlu/cosmolattice/dependencies/MyLibs;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/mt/home/dpasari/CosmoLatticeDomainWalls-main/dependencies/MyFFTW3;")
+set(CMAKE_PREFIX_PATH "${CMAKE_PREFIX_PATH};/mt/home/dpasari/CosmoLatticeDomainWalls-main/dependencies/MyPFFT;")

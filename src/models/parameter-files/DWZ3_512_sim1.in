@@ -1,6 +1,6 @@
 
 #Output
-outputfile = /lustre/ific.uv.es/prj/gl/som.somlat/lmar/buildZ3_512_17_1_sim7/
+outputfile = /mt/home/dpasari/CosmoLatticeDomainWalls-main/Results
 
 #Evolution
 expansion = true
@@ -15,7 +15,7 @@ t0=0
 tOutputFreq = 0.1
 tOutputInfreq = 3
 tOutputRareFreq = 3
-tMax = 31  #should start breaking from 24
+tMax = 60  #should start breaking from 24
 
 #Spectra options
 PS_type = 1

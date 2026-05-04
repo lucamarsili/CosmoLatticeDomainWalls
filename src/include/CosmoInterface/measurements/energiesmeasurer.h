@@ -107,12 +107,14 @@ namespace TempLat {
                     energies.addAverage(potTerm);
                     Etot += potTerm;
             );
-            T Scal =0; 
-            //Scal = scale(FieldFunctionals::Z3vacuumPhase(model));  //total scaling not normalized if fstar = proper Z3 vacuum
-            Scal = scale(FieldFunctionals::Z3vacuumPhase<Model, T>(model, lSide, N));
             energies.addAverage(Etot);
-            energies.addAverage(Scal);
-            //add a column there for scaling parameter
+            // Write one area-parameter column per wall type (ξ_k = a A_k / L³).
+            // Models that don't define NWallTypes (or set it to 0) skip this block entirely.
+            if constexpr (Model::NWallTypes > 0) {
+                ForLoop(wt, 0, Model::NWallTypes - 1,
+                    energies.addAverage(scale(model.wallAreaTerm(wt, lSide, N)));
+                );
+            }
             energies.save();
 
             if(!fixedBackground) {  // Energy cannot be checked if expansion is fixed
@@ -168,7 +170,12 @@ namespace TempLat {
             );
 
             ret.emplace_back("E_tot");
-            ret.emplace_back("Scal_tot");
+            // One column per wall type: Scal_type_1 (adjacent), Scal_type_2 (diagonal), …
+            if constexpr (Model::NWallTypes > 0) {
+                ForLoop(wt, 0, Model::NWallTypes - 1,
+                    ret.emplace_back("Scal_type_" + std::to_string(int(wt) + 1));
+                );
+            }
 
             return ret;
         }
