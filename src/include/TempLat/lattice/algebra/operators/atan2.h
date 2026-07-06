@@ -37,10 +37,10 @@ namespace TempLat {
             /* Put public methods here. These should change very little over time. */
             Atan2(T y, U x) : BinaryOperator<T, U>(y, x) { }
 
-            /** \brief Getter for lattice point i. */
+            /** \brief Getter for lattice point i.  atan2(y,x) with mR=y, mT=x. */
             inline auto get(ptrdiff_t i) {
                 using namespace std;
-                return atan2(GetValue::get(mT, i), GetValue::get(mR, i));
+                return atan2(GetValue::get(mR, i), GetValue::get(mT, i));
             }
 
             /**Automatic / symbolic derivative.

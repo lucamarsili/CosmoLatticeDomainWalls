@@ -100,6 +100,9 @@ namespace TempLat {
           // Infrequent output (spectra):
           if(n% infreqOutputFreq == 0 ) {
 
+              energiesMeasurer.measureWallDiagnostics(model,t);
+              // Junction-string + wall-velocity diagnostics (ZN domain-wall models)
+
               scalarSingletMeasurer.measureSpectra(model,t, PSMeasurer);
               // Scalar singlet spectra
               gwsMeasurer.measureSpectra(model,t, GWsPSMeasurer);

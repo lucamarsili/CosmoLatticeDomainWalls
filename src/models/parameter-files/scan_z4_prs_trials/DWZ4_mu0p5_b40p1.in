@@ -1,0 +1,55 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_trials/results_DWZ4_mu0p5_b40p1/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 179.2000     # dx = 0.7000, 2 pts/wall at a=1 (delta_min=1.4); program units, mu/H0-independent
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.50000000   # 1.0*mu   (H0/mu = 1, so a = 1 + eta)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1, mu = 0.5
+# lambda1 = mu^2/(1-b4) = mu^2/0.9, lambda2 = b4*mu^2/(2(1-b4)) = mu^2/18.
+# Program-unit shape & box are mu-independent (lambda/mu^2 fixed); only the IC seed changes.
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.5
+lambda1 = 0.2777777778
+lambda2 = 0.01388888889
+
+# ---- TRIAL: LARGE mu formation lever (mu=0.5, b4=0.1, standard EOM) ----
+# Seed rms(eta=0) ~ 0.34*mu ~ 0.17*v (50x the mu=0.01 card). The field starts close to the
+# vacuum manifold => should break the symmetry at very small a (a~1-3), where dx=0.7 still gives
+# ~2 pts/wall, i.e. the walls form RESOLVED -- the precondition staging/PRS needs.
+# Standard EOM (no PRS, no friction): watch the resolved formation, then comoving width ~1/a so
+# the network slowly de-resolves as a grows (expected; that is what PRS/frictionStartA would fix).
+prsWall       = false
+prsDamping    = 0.0
+frictionGamma = 0.0
+frictionEndA  = 3.0
+prsStartA     = 0.0

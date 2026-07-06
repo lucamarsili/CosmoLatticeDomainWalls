@@ -1,0 +1,46 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_phys_stat/results_DWZ4_physstat_b40p9_s03_dt0p05/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01231     # dt/dx = 0.05 (4x smaller than the crashed card's 0.2); dx = 126.10/512 = 0.24629
+lSide = 126.10     # mu=0.07: cells/wall = delta_bar/(mu*a*dx); sized so >=1 cell at a_max, >=2 horizons
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 62.05      # a=1+eta; a_max=63.1  (full run: tests reaching a_max, where walls -> 1 cell)
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.07          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+baseSeed = stat_s03
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain wall, beta4 = 2*lambda2/lambda1 = 0.9; lambda1-2lambda2 = 1 (kick = sqrt(l1-2l2) = 1)
+mu      = 0.07
+lambda1 = 10.0000000000
+lambda2 = 4.5000000000
+
+# DT-LOCKED b40p9 physical stat seed (2026-06-23): dt/dx=0.05 (dt=0.01231) is the dt that CURED
+# the a~46 NaN blow-up seen at dt/dx=0.2 (stiff beta4=0.9 transverse mode^2=36mu^2). s01_dt0p05
+# ran clean to a~63. Same N/box/couplings as other phys_stat betas; only dt is cut for beta4=0.9.
+prsWall = false

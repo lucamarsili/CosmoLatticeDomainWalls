@@ -1,0 +1,48 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_junction/results_phys_b40p05_s01_N1024/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 1024
+dt = 0.02795       # CFL dt/dx=0.2 held: dx=143.11/1024=0.13976 (exactly half of the N=512 card)
+lSide = 143.11     # SAME box as N=512 twin -> same horizon count; only resolution differs
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 70.55      # a=1+eta; a_max=71.6 (matches N=512 twin for a direct A/B)
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.07          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+baseSeed = stat_s01
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain wall, beta4 = 2*lambda2/lambda1 = 0.05; lambda1-2lambda2 = 1 (kick = sqrt(l1-2l2) = 1)
+mu      = 0.07
+lambda1 = 1.0526315789
+lambda2 = 0.0263157895
+
+# N=1024 RESOLUTION TEST (2026-06-25): identical physics to scan_z4_junction/DWZ4_jct_phys_b40p05_s01.in
+# (mu, H0, lSide, beta, seed, tMax all unchanged); ONLY N 512->1024 and dt halved for CFL.
+# Purpose: cells/core=1 moves a=36 -> a=72, so the wall stays resolved over the whole run.
+# Prediction: v2_adj(a) should plateau where the N=512 twin's v2 fell (a in [36,71]),
+# proving the N=512 velocity decline is a sub-grid (KE/V estimator) artifact, not deceleration.
+prsWall = false

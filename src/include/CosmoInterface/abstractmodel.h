@@ -23,6 +23,8 @@
 
 #include "TempLat/parameters/parameterparser.h"
 
+#include <limits>
+
 namespace TempLat {
 
 
@@ -51,6 +53,10 @@ namespace TempLat {
         // Number of dimensions (1,2,3). It can be changed in the model file.
         static constexpr size_t NDim = 3;
 
+        // Number of distinct wall types for ZN domain wall models (0 = no wall area measurement).
+        // Set to floor(N/2) in the model file for ZN models.
+        static constexpr size_t NWallTypes = 0;
+
 		// Coupling managers, they deal with the possible couplings between the gauge fields and complex scalars/SU2 doublets
         typedef CouplingsManager<NCScalars, NU1Flds> CsU1Couplings;   // couplings U(1) gauge-complex scalar
         typedef CouplingsManager<NSU2Doublet, NU1Flds> SU2DoubletU1Couplings;   // couplings U(1) gauge-SU2 doublet
@@ -64,12 +70,12 @@ namespace TempLat {
     // to what. All these parameters are passed as template argument to the model. In order to simplify the syntax,
     // the following macros allow the user to define a model simply by specifying a user-defined class, containing the appropriate variable.
 
-#define MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType) _ModelName, _ModelParsType::NPotTerms, _ModelParsType::NScalars,_ModelParsType::NCScalars,_ModelParsType::NU1Flds, _ModelParsType::NSU2Doublet,_ModelParsType::NSU2Flds,typename _ModelParsType::CsU1Couplings, typename _ModelParsType::SU2DoubletU1Couplings,typename _ModelParsType::SU2DoubletSU2Couplings,_FloatType,_ModelParsType::NDim
+#define MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType) _ModelName, _ModelParsType::NPotTerms, _ModelParsType::NScalars,_ModelParsType::NCScalars,_ModelParsType::NU1Flds, _ModelParsType::NSU2Doublet,_ModelParsType::NSU2Flds,typename _ModelParsType::CsU1Couplings, typename _ModelParsType::SU2DoubletU1Couplings,typename _ModelParsType::SU2DoubletSU2Couplings,_ModelParsType::NWallTypes,_FloatType,_ModelParsType::NDim
 #define MakeModelFloatType(_ModelName, _ModelParsType, _FloatType) AbstractModel<MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, _FloatType)>
 #define MakeModel(_ModelName, _ModelParsType) AbstractModel<MakeAbstractModelTemplateArgs(_ModelName, _ModelParsType, double)>
 
     // Mother of all the models. The arguments are passed as template parameters.
-    template<class R, size_t NPOTTERMS ,size_t NS, size_t NC, size_t  NU1FLDS, size_t NSU2DOUBLET, size_t NSU2FLDS, typename CSU1COUPLINGS, typename SU2DOUBLETU1COUPLINGS, typename SU2DOUBLETSU2COUPLINGS,  typename T = double, int NDIM = 3>
+    template<class R, size_t NPOTTERMS ,size_t NS, size_t NC, size_t  NU1FLDS, size_t NSU2DOUBLET, size_t NSU2FLDS, typename CSU1COUPLINGS, typename SU2DOUBLETU1COUPLINGS, typename SU2DOUBLETSU2COUPLINGS, size_t NWALLTYPES = 0, typename T = double, int NDIM = 3>
     class AbstractModel {
     public:
         // We store all the arguments passed as template arguments into class variable. That way they can easily be
@@ -80,6 +86,7 @@ namespace TempLat {
         static constexpr size_t NSU2Doublet = NSU2DOUBLET;
         static constexpr size_t NU1 = NU1FLDS;
         static constexpr size_t NSU2 = NSU2FLDS;
+        static constexpr size_t NWallTypes = NWALLTYPES;
         static constexpr size_t NDim = NDIM;
         static constexpr size_t NGWs = 6;
         static constexpr T MPl = Constants::reducedMPlanck<T>;  // Reduced Planck mass, MPl=2.435*10^18 GeV
@@ -183,6 +190,58 @@ namespace TempLat {
 
         T alpha, fStar, omegaStar; //Rescalings for program variable definitions: (alpha,f_*,w_*)
 
+        // -------------------------------------------------------------------------------------
+        // PRS fat-wall scheme & artificial friction (for domain-wall network simulations).
+        //
+        // These modify the scalar equation of motion at the (non-Lagrangian, dissipative) EOM
+        // level only. The defaults below reproduce the standard CosmoLattice EOM exactly, so
+        // existing parameter files and all other models are unaffected unless these options are
+        // explicitly set. They are read from the parameter file in the AbstractModel constructor
+        // and used in ScalarSingletKernels::get.
+        //
+        //   prsWall       : if true, the potential-gradient term in the scalar kernel carries
+        //                   a^(1+alpha) instead of a^(3+alpha). This is the Press-Ryden-Spergel
+        //                   "fat-wall" trick: it freezes the *comoving* wall width so thin walls
+        //                   stay resolved on the lattice at late times (cures the late-time
+        //                   breakdown for large U(1)->Z_N breaking).
+        //   prsDamping    : coefficient c of an extra c*(a'/a) damping added to the EOM. Standard
+        //                   PRS uses c = 1, so for alpha = 1 the total Hubble drag becomes 3(a'/a)
+        //                   (alpha_PRS = 3). With prsWall this satisfies alpha_PRS + beta_PRS/2 = 3,
+        //                   which preserves the correct domain-wall network scaling. Defaults to 1
+        //                   when prsWall is on, else 0.
+        //   frictionGamma : constant artificial friction Gamma added to the EOM (phi'' + Gamma phi'
+        //                   + ... ). Used to relax the network onto the scaling attractor faster
+        //                   (a dissipation phase). Dissipative; not from a Lagrangian.
+        //   frictionStartA: scale-factor at which the constant friction switches ON (Gamma is applied
+        //                   only while frictionStartA <= aI < frictionEndA). Default 0 => on from the
+        //                   start. Set > a_break to damp an *already-formed* network onto scaling
+        //                   without suppressing the symmetry breaking -- early friction from phi=0
+        //                   instead just delays formation.
+        //   frictionEndA  : scale-factor at which the constant friction switches off (see window
+        //                   above). Releasing it before the measurement phase lets you distinguish
+        //                   "reached scaling" from "frozen by the friction". In a radiation era
+        //                   (pEoS = 1) a = 1 + (a'/a)_0 * tau, so a scale factor maps simply to a time.
+        //   prsStartA     : scale-factor at which the PRS package (the prsWall fat-wall *and* the
+        //                   prsDamping Hubble drag) switches ON. While aI < prsStartA the EOM is the
+        //                   standard one (potPow = 3+alpha, no prsDamping), so the field can break
+        //                   the symmetry and form a wall network the normal way; once aI >= prsStartA
+        //                   the comoving wall width is frozen. This "staged PRS" avoids the failure
+        //                   mode where applying PRS from phi=0 suppresses the tachyonic instability
+        //                   and no walls ever form. Default 0 => PRS active from the start (aI starts
+        //                   at 1 >= 0), i.e. identical to the previous prsWall-from-t0 behaviour.
+        //                   The friction window (frictionStartA/frictionEndA) is independent of this gate.
+        //
+        // NB: these terms are dissipative, hence only consistent on a *fixed* background
+        // (fixedBackground = true; otherwise the Hubble/Friedmann constraint is violated). They also
+        // make the physical wall width grow with a, so the wall tension and the GW UV spectrum from
+        // such runs are unphysical -- use them for network/area-scaling diagnostics only.
+        bool prsWall = false;
+        T prsDamping = 0;
+        T frictionGamma = 0;
+        T frictionStartA = 0;
+        T frictionEndA = std::numeric_limits<T>::max();
+        T prsStartA = 0;
+
         T dx, kIR, dt;  //Length element and time step
 
         // name of the model
@@ -229,6 +288,16 @@ namespace TempLat {
             gQ_CsU1.setEffectiveCharges(CSU1Charges, gU1s);
             gQ_SU2DblU1.setEffectiveCharges(SU2DoubletU1Charges, gU1s);
             gQ_SU2DblSU2.setEffectiveCharges(SU2DoubletSU2Charges, gSU2s);
+
+            // PRS fat-wall scheme & artificial friction (domain-wall networks). All optional;
+            // defaults reproduce the standard EOM so existing runs/models are unaffected.
+            // (See the member documentation above. All quantities are in program units.)
+            prsWall       = parser.get<bool>("prsWall", false);
+            prsDamping    = parser.get<double>("prsDamping", prsWall ? 1.0 : 0.0);
+            frictionGamma  = parser.get<double>("frictionGamma", 0.0);
+            frictionStartA = parser.get<double>("frictionStartA", 0.0);
+            frictionEndA   = parser.get<double>("frictionEndA", std::numeric_limits<T>::max());
+            prsStartA     = parser.get<double>("prsStartA", 0.0);
 
           }
 

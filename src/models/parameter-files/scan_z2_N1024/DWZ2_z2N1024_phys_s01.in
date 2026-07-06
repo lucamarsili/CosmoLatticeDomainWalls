@@ -1,0 +1,44 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z2_N1024/results_phys_s01/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 1024
+dt = 0.0125
+lSide = 64.0     # dx=0.0625; delta=sqrt(2)/mu=1.414 -> 22.6 cells/wall at form
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 31.0      # a = 1+eta; a_max=32: 2 horizons & phys ~0.71 cell/wall at end (stretched)
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0
+initial_momenta    = 0
+
+# Z2 domain wall (single real scalar). v = vev, Lambda = (mu/vev)^2 = 1, kick = 1.
+# Single real scalar => no phase => no winding => NO junctions (the null-test).
+mu  = 1.0
+vev = 1.0
+baseSeed = z2_s01
+
+# PHYSICAL (non-PRS). Same box/mu/IC as the PRS twin; only the EOM differs. A=scal/(2aH).
+prsWall = false

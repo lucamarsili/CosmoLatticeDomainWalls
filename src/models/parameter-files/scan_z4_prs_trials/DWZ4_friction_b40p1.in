@@ -1,0 +1,55 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_trials/results_DWZ4_friction_b40p1/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 179.2000     # dx = 0.7000, 2 pts/wall at a=1 (delta_min=1.4); same box as diag b40p1
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.01000000   # 1.0*mu
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1, mu = 0.01
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.01
+lambda1 = 0.0001111111111
+lambda2 = 5.555555556e-06
+
+# ---- TRIAL: friction-only control (NO PRS) ----
+# Standard EOM + constant artificial friction Gamma to reach the scaling regime faster.
+# Gamma=1.0 ~ critical damping for the wall mode (omega ~ mu_prog = 1): strong enough to damp
+# the post-formation ringing (~10-20 eta sooner to the A-plateau) but NOT enough to block
+# formation (driven by the a^2-amplified tachyon, a^2~2500 >> 1). Friction switches OFF at a=70
+# so the last ~20 eta is free evolution -> confirms the network truly reached scaling rather
+# than being frozen by Gamma. Compare against the diag v0std run (Gamma=0). Walls still shrink
+# as 1/a (no fat-wall). Gamma / frictionEndA are the knobs to tune.
+prsWall       = false
+prsDamping    = 0.0
+frictionGamma = 1.0
+frictionEndA  = 70.0
+prsStartA     = 0.0

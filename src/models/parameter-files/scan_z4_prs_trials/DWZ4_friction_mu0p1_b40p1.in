@@ -1,0 +1,53 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_trials/results_DWZ4_friction_mu0p1_b40p1/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 179.2000     # SAME program box as the mu=0.01 friction card (program units, mu-independent)
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.10000000   # 1.0*mu   (H0/mu = 1, same ratio as the mu=0.01 card)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1, mu = 0.1
+# NEW param: lambda1 = mu^2/(1-b4), lambda2 = b4*mu^2/(2(1-b4))  -> both scale as mu^2,
+# so lambda2/mu^2 = 0.0556 and the program-unit wall width are IDENTICAL to the mu=0.01 card.
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.1
+lambda1 = 0.01111111111
+lambda2 = 0.0005555555556
+
+# ---- TRIAL: friction-only, LARGE mu (mu-degeneracy test vs DWZ4_friction_b40p1) ----
+# Identical to DWZ4_friction_b40p1.in in every PROGRAM-unit quantity (box, dt, H0/mu, kCutOff,
+# Gamma, frictionEndA, lambda/mu^2). If the rescaling argument is right, the average_energies /
+# scalar / area curves overlay EXACTLY (vs eta and vs a) on the mu=0.01 run. If not, I'm wrong.
+prsWall       = false
+prsDamping    = 0.0
+frictionGamma = 1.0
+frictionEndA  = 70.0
+prsStartA     = 0.0

@@ -1,0 +1,48 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs/results_z4_mu0p01_beta40p01_H1mu_k3_prs/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 358.4000     # = N * delta_bar(0.010)/2  -> dx = 0.7000 (2 pts/wall, PRS-fixed)
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 118.5      # keeps >= 3 Hubble radii/dim (27 patches in volume) at tMax
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.01000000   # 1.0000 * mu
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters  (Z4 domain-wall model)
+# V = -mu^2 |Phi|^2 + lambda1 |Phi|^4 - lambda2 (Phi^4 + Phi*^4);  v = 1, beta_4 = 0.0100
+mu      = 0.01
+lambda1 = 0.0001010101
+lambda2 = 0.0000005051
+
+# PRS fat-wall + friction (program units; keeps the comoving wall width fixed).
+# delta_bar_adj = 6.530, delta_bar_opp = 1.40, sized on 'min' wall.
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 0.0
+frictionEndA  = 3.0

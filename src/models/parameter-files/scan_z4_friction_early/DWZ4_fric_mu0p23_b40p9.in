@@ -1,0 +1,57 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_friction_early/results_DWZ4_fric_mu0p23_b40p9/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100.0     # dx=0.1953; delta_min(b4=0.9)=1.09 -> 5.6 pts/wall@a=1 (same box as scan_z4_prs_prod)
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 50.0     # a=1+eta -> a_max~51 (H0/mu=1); finite-volume: comoving horizon~a hits L at a~100
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.23000000   # 1.0*mu (H0/mu=1)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain-wall, beta4 = 2*lambda2/lambda1 = 0.9, v=1, mu=0.23
+# lambda1 = mu^2/(1-b4), lambda2 = b4*mu^2/(2(1-b4))  (v=mu/sqrt(lambda1-2lambda2)=1)
+mu      = 0.23
+lambda1 = 0.529
+lambda2 = 0.23805
+
+# ---- EARLY FRICTION (from t0) then RELEASE at the second bump (this scan's design) ----
+# Constant friction Gamma=+1.0 is ON from the START (frictionStartA=0): positive friction drives
+# the field over the FIRST bump (formation / initial roll-off) faster. It is switched OFF at
+# frictionEndA -- the SECOND bump (post-formation coarsening), where the same friction would instead
+# SLOW the approach to scaling -- so the late evolution a in [frictionEndA, a_max~51] is the
+# UNMODIFIED EOM and shows the ACTUAL scaling. Gamma=1.0 ~ near-critical (m_eff ~ 1/delta ~ 0.7,
+# program units, mu-independent box).
+# frictionEndA = 3.0 -- the SECOND-bump turn-off (user, 2026-06-08). mu=0.23 = 2.3x the mu=0.1
+# seed -> forms EARLIER, so the (friction-compressed) first bump is cleared by a~3.
+prsWall        = false
+prsDamping     = 0.0
+frictionGamma  = 1.0
+frictionStartA = 0.0
+frictionEndA   = 3.0
+prsStartA      = 0.0

@@ -1,0 +1,4 @@
+/mt/home/dpasari/CosmoLattice_Zn/buildZ3_junctions/CMakeFiles/cosmolattice.dir
+/mt/home/dpasari/CosmoLattice_Zn/buildZ3_junctions/CMakeFiles/clean-cmake.dir
+/mt/home/dpasari/CosmoLattice_Zn/buildZ3_junctions/CMakeFiles/edit_cache.dir
+/mt/home/dpasari/CosmoLattice_Zn/buildZ3_junctions/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,49 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_stat/results_DWZ4_stat_b40p9_s09/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.024
+lSide = 279.0     # dx=0.5449; beta4=0.9 adj wall ~2.0 cells (opp ~2.6); >=2 horizons to eta=100
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 100.0      # a=1+eta; horizons/side mu*L/(1+eta): 5.5@eta50, 2.8@eta100
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+baseSeed = stat_s09
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain wall, beta4 = 2*lambda2/lambda1 = 0.9, v=1, mu=1  (lambda1-2lambda2=mu^2)
+mu      = 1.0
+lambda1 = 10.0000000000
+lambda2 = 4.5000000000
+
+# 10-seed statistical PRS scan (2026-06-18). Success: <|Phi|^2>->0.5 & stays; A=scal/(2aH).
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 0.0
+frictionStartA= 0.0
+frictionEndA  = 0.0
+prsStartA     = 0

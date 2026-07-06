@@ -1,0 +1,84 @@
+#Output
+outputfile = /mt/user-batch/dpasari/prs_test/results_z4_prs_example/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.01000000   # 1.0000 * mu
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters  (Z4 domain-wall model)
+# V = -mu^2 |Phi|^2 + lambda1 |Phi|^4 - lambda2 (Phi^4 + Phi*^4)
+# beta_4 = 2*lambda2/lambda1 must be in (0,1); lambda1 = mu^2 + 2*lambda2 for v = 1.
+mu      = 0.01
+lambda1 = 0.0001010101
+lambda2 = 0.0000005051
+
+# ============================================================================
+# PRS fat-wall scheme + artificial friction  (modified scalar EOM)
+# ----------------------------------------------------------------------------
+# All optional. Omit them entirely to recover the standard CosmoLattice EOM
+# (the exact behaviour of every existing run). All quantities are in PROGRAM
+# units (conformal-time derivatives; H = a'/a = aDot/a is already in program
+# units, NOT GeV).
+#
+# Modified EOM (alpha = 1, conformal time):
+#   phi'' + [2 + prsDamping]*(a'/a)*phi' + frictionGamma*phi'
+#         - laplacian(phi) + a^{prsWall? 0 : 2} * dV/dphi = 0
+#
+#   prsWall = true   -> potential term carries a^0 instead of a^2, freezing the
+#                       COMOVING wall width so thin walls stay resolved at late
+#                       times (cures the large-beta_4 late-time breakdown).
+#   prsDamping = 1   -> extra 1*(a'/a) damping, so total Hubble drag = 3(a'/a).
+#                       With prsWall this is standard PRS (alpha_PRS=3, beta_PRS=0,
+#                       alpha_PRS + beta_PRS/2 = 3 -> correct network scaling).
+#                       Defaults to 1.0 when prsWall=true, else 0.
+#   frictionGamma    -> constant artificial friction to reach scaling FASTER
+#                       (initial dissipation phase). Program units; ~ a few * H_i
+#                       is typical. Here H_i = H0/omegaStar = 0.01/0.01 = 1.
+#   frictionEndA     -> scale factor at which frictionGamma switches off.
+#                       In radiation era (omegaEoS=1/3) a = 1 + (a'/a)_0 * tau
+#                       with (a'/a)_0 = 1 here, i.e. a = 1 + tau. So frictionEndA
+#                       = 3.0 releases the friction at tau ~ 2 (a couple Hubble
+#                       times after formation), leaving pure PRS evolution after.
+#
+# CAVEATS (PRS makes the physical wall width grow ~ a):
+#   * The wall-area / scaling observable A (ZNvacuumPhase) is geometric and stays
+#     valid (and better resolved) under PRS.
+#   * The wall tension sigma and the GW UV spectrum from a PRS run are NOT
+#     physical -- take sigma from the static BVP tensions, and run GW spectra with
+#     a FIXED-WIDTH (prsWall=false) simulation, resolution permitting.
+#   * Use only with fixedBackground = true (the terms are dissipative, so the
+#     self-consistent Friedmann/Hubble constraint would be violated otherwise).
+# ============================================================================
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 2.0
+frictionEndA  = 3.0

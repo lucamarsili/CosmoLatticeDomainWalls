@@ -1,0 +1,49 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z2/results_prs_s01/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.015
+lSide = 38.0     # dx=0.0742; delta=sqrt(2)/mu=1.414 -> 19 cells/wall at form; balanced box
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 18.0      # a = 1+eta; a_max=19: ~2 horizons & phys ~1 cell/wall at end
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0
+initial_momenta    = 0
+
+# Z2 domain wall (single real scalar). v = vev, Lambda = (mu/vev)^2 = 1, kick = 1.
+# Single real scalar => no phase => no winding => NO junctions (the null-test).
+mu  = 1.0
+vev = 1.0
+baseSeed = z2_s01
+
+# PRS package (fat wall + Hubble drag). Matched mu=1 to the physical twin.
+prsWall        = true
+prsDamping     = 1.0
+frictionGamma  = 0.0
+frictionStartA = 0.0
+frictionEndA   = 0.0
+prsStartA      = 0

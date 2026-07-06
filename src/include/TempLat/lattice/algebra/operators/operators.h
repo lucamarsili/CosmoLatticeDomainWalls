@@ -6,6 +6,7 @@
 #include "TempLat/lattice/algebra/operators/power.h"
 #include "TempLat/lattice/algebra/operators/squareroot.h"
 #include "TempLat/lattice/algebra/operators/cosine.h"
+#include "TempLat/lattice/algebra/operators/sine.h"
 #include "TempLat/lattice/algebra/operators/heavisidestepfunction.h"
 #include "TempLat/lattice/algebra/operators/absolutevalue.h"
 #include "TempLat/lattice/algebra/operators/unaryminus.h"

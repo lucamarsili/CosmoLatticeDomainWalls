@@ -1,0 +1,47 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z3_prs_stat_binfix/results_DWZ3_stat_b30p1_s01/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.020
+lSide = 215.0     # dx=0.4199; beta_N=0.9 adj wall ~2.0 cells; >=2 horizons to eta=100
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 100.0      # horizons/side mu*L/(1+eta): 4.2@eta50, 2.1@eta100
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0
+
+#IC
+kCutOff = 3
+baseSeed = stat_s01
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z3 domain wall, beta_N = 0.1 (R=sqrt((1-bN)/(1+bN))), v=1, mu=1
+# lambda1 = 1/R, lambda2 = sqrt(2)(1-R)/(3R); breaking marker <|Phi|^2> > 0.25
+mu      = 1.0
+lambda1 = 1.1055415968
+lambda2 = 0.0497527859
+
+# 10-seed statistical PRS scan (2026-06-18). A=scal/(2aH); scal1 is the only wall col (Z3).
+prsWall = true
+prsDamping = 1.0
+prsStartA = 0

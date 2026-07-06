@@ -1,0 +1,58 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_trials/results_DWZ4_smallbox_mu0p1_b40p1/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 22.4000     # 8x SMALLER box -> dx = 0.0875 (vs 0.70). pts/wall = 1.4/(a*dx) = 16/a:
+                    # 2 pts/wall up to a=8, ~1.2 pts/wall at the a~13 formation (vs 0.15 on the big box).
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 30.0          # a = 1 + eta -> a_max ~ 31. Comoving horizon ~ a, box = 22.4, so finite-volume
+                     # effects set in around a~22 (eta~21): scaling window is only a~13 -> ~22.
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.10000000   # 1.0*mu   (H0/mu = 1, so a = 1 + eta)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1, mu = 0.1
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.1
+lambda1 = 0.01111111111
+lambda2 = 0.0005555555556
+
+# ---- TRIAL: smaller box, RESOLVED FORMATION (user's cheap-lever request) ----
+# Cheapest resolution knob: shrink lSide at fixed N=256 so dx is 8x finer. mu=0.1 (NOT larger) is
+# chosen on purpose: its seed rms~0.034 is small, so the network forms via slow tachyonic growth and
+# coarsens to ~horizon scale (NOT the dense, sub-grid mess that mu>=0.5's large seed would give).
+# Net: walls form ~1.2 pts/wall at a~13 -- marginally RESOLVED for the first time, vs 0.15 on big box.
+# Standard EOM (no PRS) so we can SEE resolved formation cleanly before staging PRS.
+# CAVEAT (the cost of the small box): comoving horizon ~ a reaches the box at a~22, so the scaling
+# window is narrow (~0.5 e-fold). To get resolved walls AND a long scaling window you need the big
+# box + PRS (verified correct) or larger N -- the small box trades scaling-range for resolution.
+prsWall       = false
+prsDamping    = 0.0
+frictionGamma = 0.0
+frictionEndA  = 3.0
+prsStartA     = 0.0

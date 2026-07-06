@@ -1,0 +1,49 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_diag/results_DWZ4_b40p1_v3both/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 179.2000     # = N*delta_min/2 -> dx = 0.7000 (2 pts/wall under PRS); delta_min=1.4
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.01000000   # 1.0*mu
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.01
+lambda1 = 0.0001111111111
+lambda2 = 5.555555556e-06
+
+# ---- DIAGNOSTIC VARIANT: v3both ----
+# BOTH from t0 (= current production config, expected broken): 3H + V'~a^0.
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 0.0
+frictionEndA  = 3.0
+prsStartA     = 0.0

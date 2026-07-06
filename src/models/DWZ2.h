@@ -1,219 +1,153 @@
-#ifndef LPHI4_H //Usual macro guard to prevent multiple inclusion
-#define LPHI4_H
-
-/* This file is part of CosmoLattice, available at www.cosmolattice.net .
-   Copyright Daniel G. Figueroa, Adrien Florio, Francisco Torrenti and Wessel Valkenburg.
-   Released under the MIT license, see LICENSE.md. */
-
-// File info: Main contributor(s): Daniel G. Figueroa, Adrien Florio, Francisco Torrenti,  Year: 2020
+#ifndef DWZ2_H
+#define DWZ2_H
 
 #include "CosmoInterface/cosmointerface.h"
-
-//Include cosmointerface to have access to all of the library.
+#include "TempLat/lattice/measuringtools/scaling.h"
+#include <vector>
+#include <string>
 
 namespace TempLat
 {
     /////////
-    // Model name and number of fields
+    // Z2 domain wall model: a single REAL scalar phi with
+    //
+    //   V = -(mu^2/2) phi^2 + (Lambda/4) phi^4 + V0 = (mu^2/4v^2)(phi^2 - v^2)^2
+    //
+    // with Lambda = mu^2 / v^2, vacua at phi = +-v (v = vev), and V0 = mu^4/(4 Lambda)
+    // chosen to zero the vacuum energy.  This is exactly the DWZ4 potential restricted
+    // to the real axis (Lambda <-> lambda1 - 2 lambda2), so the kink width is the same
+    // sqrt(2)/mu and the same (mu, fStar, omegaStar) convention applies.
+    //
+    // The point of Z2: a single real scalar has NO phase, so it cannot wind into a
+    // global string and there are NO junctions -- only walls.  This is the clean
+    // null-test for the PRS-vs-physical wall-area gap, which we attributed to junction
+    // frustration in Z4.  If that gap is all junctions, Z2 phys/PRS -> 1.0; any residual
+    // quantifies the junction-independent part (fat-wall smoothing + wall dynamics).
+    //
+    // PRS (fat wall + Hubble drag) is inherited generically from the base model
+    // (prsWall / prsDamping / prsStartA) and the scalar-singlet kernel -- no model code.
+    //
+    // Output: one Scal column (adjacent = only wall type) in average_energies.txt, plus
+    // a separate wall_diagnostics file carrying the potential-cutoff wall velocity
+    // v^2 gamma^2 = sum(mask*KE)/sum(mask*V).
     /////////
 
-    // In the following class, we define the defining parameters of your model:
-    // number of fields of each species and the type of tinteractions.
-
     struct ModelPars : public TempLat::DefaultModelPars {
-    	static constexpr size_t NScalars = 1;
-        // In our phi4 example, we only want 2 scalar fields.
-        static constexpr size_t NPotTerms = 1;
-        // Our potential naturaly splits into two terms: the inflaton potential
-        // and the interaction with the daughter field.
-
-        // All the numbers of fields are 0 by default, so we need only
-        // to specify that we want two scalar fields.
-        // See the model with gauge fields to have an example of how to turn
-        // them on and specify interactions.
+        static constexpr size_t NScalars   = 1;
+        static constexpr size_t NPotTerms  = 1;
+        // Z2: a single wall type (sign flip phi: +v <-> -v).
+        static constexpr size_t NWallTypes = 1;
     };
 
   #define MODELNAME DWZ2
-  // Here we define the name of the model. This should match the name of your file.
 
   template<class R>
   using Model = MakeModel(R, ModelPars);
-  // In this line, we define an appropriate generic model, with the correct
-  // number of fields, ready to be customized.
-  // If you are curious about what this is doing, the macro is defined in
-  // the "CosmoInterface/abstractmodel.h" file.
 
   class MODELNAME : public Model<MODELNAME>
-  // Declaration of our model. It inherits from the generic model defined above.
   {
- //...
-private:
-
-    double eta ,lambda; //here the only parameters are the self interacting coupling lambda and the vev.
-// Here are the declaration of the model specific parameters. They are 'private'
-// to force you using them only within your model and not outside.
-///SCALE FACTOR model.aI or model.aSI
-// Some parameters which are declared in the class "Model" and which are useful (they are all 'public'):
-
-// fldS0, piS0 : arrays which should contain the initial homogeneous values of
-//               the scalar fields
-//
-// alpha, fStar, omegaStar : time and field rescaling to go to program units.
-//
-// fldS : The actual object which contains the scalar fields.
+  private:
+    double mu, vev, Lambda;
 
   public:
 
-    MODELNAME(ParameterParser& parser, RunParameters<double>& runPar, std::shared_ptr<MemoryToolBox> toolBox): //Constructor of our model.
-    Model<MODELNAME>(parser,runPar.getLatParams(), toolBox, runPar.dt, STRINGIFY(MODELLABEL)) //MODELLABEL is defined in the cmake.
+    MODELNAME(ParameterParser& parser, RunParameters<double>& runPar,
+              std::shared_ptr<MemoryToolBox> toolBox)
+    : Model<MODELNAME>(parser, runPar.getLatParams(), toolBox, runPar.dt, STRINGIFY(MODELLABEL))
     {
+        mu  = parser.get<double>("mu");
+        vev = parser.get<double>("vev");
+        Lambda = mu * mu / (vev * vev);            // V = -(mu^2/2)phi^2 + (Lambda/4)phi^4
 
-      /////////
-      // Independent parameters of the model (read from parameters file)
-      /////////
+        fldS0 = parser.get<double, 1>("initial_amplitudes");
+        piS0  = parser.get<double, 1>("initial_momenta", {0});
 
-      lambda = parser.get<double>("lambda");
-      //  We start by initializing our model paramteters. We read them from the
-      // input file/command line.  Effectively, by calling 'par.get<double>("lambda")'
-      // we declare a new parameter which needs to be in the input data.  Its name is
-      // "lambda" and we specify it is a 'double'.
-
-      eta  = parser.get<double>("eta");
-      // In the same way, we declare an input parameter 'q'.
-	 
-
-      // g = sqrt(q*lambda);
-      //For convenience, we also define g as a function of lambda and q.
-
-
-        /////////
-        // Initial homogeneous components of the fields
-        // (read from parameters file, or specified here if not)
-        /////////
-
-        fldS0 = parser.get<double,1>("initial_amplitudes"); 
-        piS0 = parser.get<double, 1>("initial_momenta", 0);
-        
-        // Then, we need to specify the initial homogeneous
-        // value of our fields. We read them again from the input file. The int '2' means
-        // that we actually expect two values and that we will get an array of
-        // double of size two.
-        // Contrary to the "initial_amplitudes" parameter and the others above,
-        //, the "initial_momenta" is an optional parameter. It can still be specified through
-        //  command line or input file as initial_momenta=value1 value2 ... valueNs,
-        // but it can also be omitted, as we specified a default value of '{0, 0}'.
-
-
-        /////////
-        // Rescaling for program variables
-        /////////
-
-        alpha = 1;
-        fStar = eta; //fldS0[0];  //changed it, it should be mu
-        omegaStar = sqrt(2*lambda)* eta;  // sqrt(lambda) * fStar;
-        // We now need to specify the rescaling from physical units to program units.
-        // This consists of the  time rescaling exponent alpha, the field rescaling fStar
-        // and the velocity rescaling omegaStar.
-        // See the paper for more information on how to fix them.
+        // Same rescaling convention as DWZ4 (real axis): fStar = v, omegaStar = mu.
+        alpha     = 1;
+        fStar     = vev;
+        omegaStar = mu;
 
         setInitialPotentialAndMassesFromPotential();
-        // Here we call this function to compute the value of the potential on the homogeneous
-        // initial condition  (useful to set the initial Hubble rate). We also compute
-        // in this function the masses from the second derivative of the potential
-        // evaluated on the homogeneous initial conditions. If you want to do something else,
-        // uncomment the next section and do whatever suits your needs.
-
-        /*
-          masses2S = {..., ...};
-          setInitialPotentialFromPotential();
-         */
     }
 
-   /////////
-   // Program potential (add as many functions as terms are in the potential)
-   /////////
-
-    auto potentialTerms(Tag<0>) // Inflaton potential energy
-    //
-    // Now we need to define the physics of the model. We start by defining the potential.
-    // We need to specify as  many potential  terms as we specified in the ModelParams,
-    // here 2. Then for every potential terms, we define a function
-    //' auto potentialTerms(Tag<N>)'  with N =0,...,NPot -1. The type 'Tag<N>' simply allows
-    // to define different function with the same name. The 'auto' keyword lets the compiler
-    // figure out on itself what is the actual return type of the function.
-    {
-      return (lambda/4)*pow((pow<2>(fldS(0_c)) - pow(eta,2)),2);
-
-	// 0.25 * pow<4>(fldS(0_c));
-        // Some notations.  The scalar fields are stored in a collection called 'fldS'.
-        // The scalar fields are labelled  from 0 to Ns-1. The field say number 1 is
-        // accessed through the syntax 'fldS(0_c)'. The function 'pow<N>(x)'. Works with the
-        // known-at-compile-time integer N and compute the expression x*...*x N times.
-        // If you don't know the integer at compile time or you don't have an integer,
-        // use the more usual syntax pow(x, N).
-        // These 'pow' functions are just one example of the many algebraic functions which
-        // can be applied to our fields,  see the manual for an exhaustive list
-        // and what to do if you want to implement a new one.
-    }
-    // auto potentialTerms(Tag<1>) // Interaction energy
-    // {
-    //  return 0.5 * q * pow<2>(fldS(0_c) * fldS(1_c));
-    // }
-	
-	
-	
-    // Advanced note (ignore if you are satisfied with the above) :
-    // - The 'auto' return type is important because the object returned is
-    // not say an array containing  the value of the expression but the expression itself, which can and will be
-    // evaluate later on. The type of the  expression itself depends on the expression and can be intricated. See
-    // manual for more  details.
-    // - The syntax 0_c is equivalent to Tag<0>(),
-    // i.e. creating  an object of type 0. This operator '_c' is a modern C++ user-defined type literal,
-    // taken from Boost and located in fcn/util/rangeiteration/tagliteral.h .
-
-
-
-   /////////
-   // Derivatives of the program potential with respect fields
-   // (add one function for each field).
-   /////////
-
-    auto potDeriv(Tag<0>) // Derivative with respect to the inflaton.
-    // In exactly the same fashion, we  need to define one derivative of the potential
-    // per scalar field (2 in this case).  The integer in Tag<0> tells you the field with
-    // respect to which you are defining the derivative of the potential of.
-    {
-      return    (lambda)*(pow<2>(fldS(0_c)) - pow(eta,2))*fldS(0_c);
-      //  pow<3>(fldS(0_c)) + q * fldS(0_c) * pow<2>(fldS(1_c)) ;
-    }
-
-    // auto potDeriv(Tag<1>)  // Derivative with respect to the daughter field.
-    // {
-    // return  q * fldS(1_c) * pow<2>(fldS(0_c));
-    // }
-	
-	
-	
     /////////
-   //  Second derivatives of the program potential with respect fields
-   // (add one function for each field)
-   /////////
-
-    auto potDeriv2(Tag<0>) // Second derivative with respect inflaton
-    // Finally, for the purpose of initializing the masses, the user needs to define
-    // in the same fashion the second derivatives of the potential
-    // (put 'return 0' if you are not using this feature).
+    // Potential  (single term, vacuum-subtracted via +V0 = mu^4/(4 Lambda))
+    /////////
+    auto potentialTerms(Tag<0>)
     {
-      return    (lambda)*(3* pow<2>(fldS(0_c)) - pow(eta,2)); // return  3 * pow<2>(fldS(0_c)) +  q * pow<2>(fldS(1_c)) ;
+        return -(0.5) * mu * mu * pow<2>(fldS(0_c))
+               + (0.25) * Lambda * pow<4>(fldS(0_c))
+               + pow(mu, 4) / (4.0 * Lambda);
     }
 
-    // auto potDeriv2(Tag<1>) // Second derivative with respect daughter field
-    // {
-    // return  q * pow<2>(fldS(0_c)) ;
-    // }
-		
-	
+    // dV/dphi = -mu^2 phi + Lambda phi^3
+    auto potDeriv(Tag<0>)
+    {
+        return -mu * mu * fldS(0_c) + Lambda * pow<3>(fldS(0_c));
+    }
+
+    // d2V/dphi^2 = -mu^2 + 3 Lambda phi^2
+    auto potDeriv2(Tag<0>)
+    {
+        return -mu * mu + 3.0 * Lambda * pow<2>(fldS(0_c));
+    }
+
+    /////////
+    // Wall area: single sign-flip wall type (no junctions).
+    /////////
+    template<int WallIdx>
+    auto wallAreaTerm(Tag<WallIdx>, double lSide_in, int N_in)
+    {
+        static_assert(WallIdx == 0, "Z2 has only one wall type (Tag<0>).");
+        return FieldFunctionals::Z2vacuumSign(*this, lSide_in, N_in);
+    }
+
+    /////////
+    // Wall-velocity diagnostic.  v^2 gamma^2 = sum(mask*KE)/sum(mask*V) over wall sites,
+    // mask = potential cutoff V > alpha*Vmax (alpha = 0.2, 0.4, 0.6).  Mirrors the DWZ4
+    // "selector A" velocity (single real field).  Written to a separate wall_diagnostics
+    // file on the infrequent schedule; EnergiesMeasurer detects it via SFINAE.
+    /////////
+
+    // Per-site physical kinetic-energy density (0.5 a^-6 pi^2).
+    auto wallKineticDensity()
+    {
+        return 0.5 * pow<-6>(aI) * pow<2>(piS(0_c));
+    }
+
+    // Per-site (vacuum-subtracted) potential-energy density.
+    auto wallPotentialDensity()
+    {
+        return potentialTerms(Tag<0>());
+    }
+
+    std::vector<std::string> wallDiagnosticsHeaders() const
+    {
+        return { "velA02_KE", "velA02_V", "velA02_N",
+                 "velA04_KE", "velA04_V", "velA04_N",
+                 "velA06_KE", "velA06_V", "velA06_N" };
+    }
+
+    std::vector<double> wallDiagnosticsValues(double /*lSide_in*/, int /*N_in*/)
+    {
+        std::vector<double> out;
+        out.reserve(9);
+
+        // Barrier height at phi = 0 (vacuum-subtracted): V(0) - V(v) = mu^4/(4 Lambda).
+        const double Vmax = pow(mu, 4) / (4.0 * Lambda);
+        auto KE = wallKineticDensity();
+        auto Vd = wallPotentialDensity();
+
+        for (double a : {0.2, 0.4, 0.6}) {
+            auto m = heaviside(Vd - a * Vmax);
+            out.push_back(scale(m * KE));
+            out.push_back(scale(m * Vd));
+            out.push_back(scale(m));
+        }
+        return out;
+    }
+
     };
 }
 
-#endif //LPHI4_H
+#endif // DWZ2_H

@@ -1,0 +1,40 @@
+#Output
+outputfile = /mt/user-batch/dpasari/_aform_test/res_b0p9/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.02
+lSide = 30.0
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq = 5
+tOutputRareFreq = 3
+tMax = 22.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.07
+
+#IC
+kCutOff = 3
+baseSeed = stat_s01
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+mu      = 0.07
+lambda1 = 10.0
+lambda2 = 4.5

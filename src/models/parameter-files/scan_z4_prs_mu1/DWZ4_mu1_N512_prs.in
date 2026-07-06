@@ -1,0 +1,55 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_mu1/results_DWZ4_mu1_N512_prs/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100.0     # dx=0.1953; PRS frozen wall width sqrt(2)/mu=1.41 -> 7.2 cells FOREVER
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 50.0     # a=1+eta -> a_max~51; comoving horizon eta hits L/2 at eta=50
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.00000000   # 1.0*mu (H0/mu=1)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain-wall, beta4 = 2*lambda2/lambda1 = 0.1, v=1, mu=1.0
+# lambda1 = mu^2/(1-b4), lambda2 = b4*mu^2/(2(1-b4))  (v=mu/sqrt(lambda1-2lambda2)=1)
+mu      = 1.0
+lambda1 = 1.111111111
+lambda2 = 0.05555555556
+
+# ---- PRS FROM t0 (the IR-band fix, 2026-06-10): PRS freezes the comoving tachyonic band at
+# k<mu, so the box must satisfy mu*L >> 2pi for the symmetry to break AT ALL under PRS
+# (mu=0.01: 0 tachyonic modes -> never breaks; mu=0.1: ~2; here mu=0.5,L=100: ~260 modes).
+# Simultaneously the frozen wall width sqrt(2)/mu must be a few cells (here 7.2), like every
+# PRS run in the literature. Inside this window no staging is needed: walls FORM at the frozen
+# width (no re-fattening melt) and resolution never degrades. Success check: Ev1<0 and
+# <|Phi|^2> ~ 0.5 after formation. ----
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 0.0
+frictionStartA= 0.0
+frictionEndA  = 0.0
+prsStartA     = 0

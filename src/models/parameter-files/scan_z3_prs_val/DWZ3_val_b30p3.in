@@ -1,0 +1,47 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z3_prs_val/results_DWZ3_val_b30p3/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 50
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+#Model Parameters  (beta_N = 0.3: R = 0.73379939, kappa = 0.460608, h-vev = 1)
+# lambda1 = 1/R, lambda2 = sqrt(2)(1-R)/(3R)  [mu=1, v=1 normalization]
+# breaking marker: <|Phi|^2> > 0.25  (Ev1<0 also works here: Ev1_vac = V0-0.5 = -0.220)
+mu      = 1.0
+lambda1 = 1.36277029
+lambda2 = 0.17101155
+
+#PRS (from t0)
+prsWall = true
+prsDamping = 1.0
+prsStartA = 0

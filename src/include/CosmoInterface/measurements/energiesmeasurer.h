@@ -18,9 +18,18 @@
 #include "CosmoInterface/definitions/hubbleconstraint.h"
 #include "CosmoInterface/definitions/gaugederivatives.h"
 #include "CosmoInterface/definitions/fieldfunctionals.h"
+#include <type_traits>
 
 
 namespace TempLat {
+
+    // Detect whether a model defines wall (junction/velocity) diagnostics.
+    // Models without the method compile fine and simply skip the extra file.
+    template<class M, class = void>
+    struct HasWallDiagnostics : std::false_type {};
+    template<class M>
+    struct HasWallDiagnostics<M, std::void_t<decltype(std::declval<M&>().wallDiagnosticsValues(0.0, 0))>>
+        : std::true_type {};
 
     /** \brief A class which contains measurements of energies and scale factor.
      *
@@ -39,9 +48,23 @@ namespace TempLat {
                 fixedBackground(par.fixedBackground), // boolean: if true, expansion is given by fixed background
                 Etot0(0),  // Initial total energy
                 energies(filesManager, "energies", amIRoot, append, getEnergyHeaders(model)),  // Output file for volume-average energies.
-                energyCons(filesManager,  "energy_conservation", amIRoot, append, getEnergyConsHeaders(), fixedBackground) 
+                energyCons(filesManager,  "energy_conservation", amIRoot, append, getEnergyConsHeaders(), fixedBackground),
                  // Output file for checking energy conservation.
+                wallDiag(filesManager, "wall_diagnostics", amIRoot, append, getWallDiagHeaders(model), !HasWallDiagnostics<Model>::value)
+                 // Output file for junction-string + wall-velocity diagnostics (only created if the model defines them).
                 {
+        }
+
+        // Junction-string and wall-velocity diagnostics. Called on the INFREQUENT
+        // schedule (transcendental-heavy); no-op for models without the method.
+        template <class Model>
+        void measureWallDiagnostics(Model& model, T t)
+        {
+            if constexpr (HasWallDiagnostics<Model>::value) {
+                wallDiag.addAverage(t);
+                for (double val : model.wallDiagnosticsValues(lSide, N)) wallDiag.addAverage(T(val));
+                wallDiag.save();
+            }
         }
 
         template <class Model>
@@ -107,12 +130,14 @@ namespace TempLat {
                     energies.addAverage(potTerm);
                     Etot += potTerm;
             );
-            T Scal =0; 
-            //Scal = scale(FieldFunctionals::Z3vacuumPhase(model));  //total scaling not normalized if fstar = proper Z3 vacuum
-            Scal = scale(FieldFunctionals::Z3vacuumPhase<Model, T>(model, lSide, N));
             energies.addAverage(Etot);
-            energies.addAverage(Scal);
-            //add a column there for scaling parameter
+            // Write one area-parameter column per wall type (ξ_k = a A_k / L³).
+            // Models that don't define NWallTypes (or set it to 0) skip this block entirely.
+            if constexpr (Model::NWallTypes > 0) {
+                ForLoop(wt, 0, Model::NWallTypes - 1,
+                    energies.addAverage(scale(model.wallAreaTerm(wt, lSide, N)));
+                );
+            }
             energies.save();
 
             if(!fixedBackground) {  // Energy cannot be checked if expansion is fixed
@@ -168,13 +193,30 @@ namespace TempLat {
             );
 
             ret.emplace_back("E_tot");
-            ret.emplace_back("Scal_tot");
+            // One column per wall type: Scal_type_1 (adjacent), Scal_type_2 (diagonal), …
+            if constexpr (Model::NWallTypes > 0) {
+                ForLoop(wt, 0, Model::NWallTypes - 1,
+                    ret.emplace_back("Scal_type_" + std::to_string(int(wt) + 1));
+                );
+            }
 
             return ret;
         }
 
+        // Returns header for the wall-diagnostics file ("t" + model's labels).
+        template <typename Model>
+        std::vector<std::string> getWallDiagHeaders(Model& model) const
+        {
+            std::vector<std::string> ret;
+            ret.emplace_back("t");
+            if constexpr (HasWallDiagnostics<Model>::value) {
+                for (const auto& h : model.wallDiagnosticsHeaders()) ret.emplace_back(h);
+            }
+            return ret;
+        }
+
 		// Returns header for energy conservation file.
-        std::vector<std::string> getEnergyConsHeaders() const   
+        std::vector<std::string> getEnergyConsHeaders() const
         {
             std::vector<std::string> ret;
             ret.emplace_back("t");
@@ -199,6 +241,7 @@ namespace TempLat {
 
         MeasurementsSaver<T> energies;
         MeasurementsSaver<T> energyCons;
+        MeasurementsSaver<T> wallDiag;
 
     };
 

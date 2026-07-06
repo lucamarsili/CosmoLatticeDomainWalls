@@ -1,0 +1,57 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_prod/results_DWZ4_b40p9_std/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100.0     # dx=0.1953; delta_min(b4=0.9)=1.09 -> 5.6 pts/wall@a=1 (strict 1pt to a~5.6; see note)
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 50.0     # a=1+eta -> a_max~51; comoving horizon~a hits L at a~100 (finite-volume)
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.10000000   # 1.0*mu (H0/mu=1)
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# energy_snapshot = E_S_G 
+
+# Z4 domain-wall, NEW beta4 = 2*lambda2/lambda1 = 0.9, v=1, mu=0.1
+# lambda1 = mu^2/(1-b4), lambda2 = b4*mu^2/(2(1-b4))  (v=mu/sqrt(lambda1-2lambda2)=1)
+mu      = 0.1
+lambda1 = 0.1
+lambda2 = 0.045
+
+# ---- STANDARD EOM reference (no PRS). Expect: formation overshoot ~a=7-8 (mu=0.1), then a
+# beta-DEGENERATE radial roll to |Phi|=v through the trough (a~13-19), then a clean BETA-ORDERED
+# scaling plateau (a~26-51). RUN THESE FIRST -- read off the plateau onset (sets prsStartA for the
+# _prs cards) and the late-a where A1 finally de-resolves. NOTE: strict delta/dx>=1 says walls go
+# sub-grid at a~5.6, but the phase-based ZNvacuumPhase area estimator empirically tracks CLEAN
+# beta-ordered plateaus to a~51 at this L=100/N=512 -- so that criterion is over-conservative. ----
+prsWall       = false
+prsDamping    = 0.0
+frictionGamma = 0.0
+frictionStartA= 0.0
+frictionEndA  = 0.0
+prsStartA     = 0.0
+

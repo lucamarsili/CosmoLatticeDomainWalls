@@ -1,0 +1,50 @@
+#Output
+outputfile = results/scan_z4_prs_greedy/results_DWZ4_greedy_b40p9_s01/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 1024
+dt = 0.012000
+lSide = 279.0     # mu=1, dx=0.2725; fixed box: cells/wall >=4 (Z4), cells/core 5.2 ALL beta; >=5.5 horizons to a=51
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 50.0       # a=1+eta; PRS plateau ~eta22-30 (+margin); horizons/side mu*L/a = 5.5@a51
+tBackupFreq = -1.00     # <0 = OFF (default); PRS ~23-27h @64rk. BACKUP_FRAC to enable.
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+baseSeed = greedy_s01
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z4 domain wall, beta4 = 2*lambda2/lambda1 = 0.9, v=1, mu=1  (lambda1-2lambda2 = mu^2)
+mu      = 1.0
+lambda1 = 10.0000000000
+lambda2 = 4.5000000000
+
+# GREEDY N=1024 plateau scan (2026-06-26). PRS. <|Phi|^2>->0.5; A=scal/(2aH); wall_diagnostics emitted.
+prsWall       = true
+prsDamping    = 1.0
+frictionGamma = 0.0
+frictionStartA= 0.0
+frictionEndA  = 0.0
+prsStartA     = 0

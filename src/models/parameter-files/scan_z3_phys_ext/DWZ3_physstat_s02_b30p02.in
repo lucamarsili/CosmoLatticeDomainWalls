@@ -1,0 +1,44 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z3_phys_ext/results_DWZ3_physstat_b30p02_s02/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.11640
+lSide = 297.99     # mu=0.07: cells/wall = delta_bar/(mu*a*dx); sized so >=1 cell at a_max, >=2 horizons
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 147.99      # a=1+eta; a_max=149.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.07          # H0/mu = 1 -> a = 1+eta
+
+#IC
+kCutOff = 3
+baseSeed = stat_s02
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z3 domain wall, beta_N = 0.02 (R=sqrt((1-bN)/(1+bN))), lambda1=1/R, lambda2=sqrt(2)(1-R)/(3R)
+mu      = 0.07
+lambda1 = 1.0202040612
+lambda2 = 0.0095242858
+
+# EXTREME-beta extension (2026-06-24) of scan_z3_phys_stat. A=scal/(2aH); scal1=last col.
+prsWall = false

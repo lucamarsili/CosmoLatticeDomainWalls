@@ -1,0 +1,54 @@
+#Output
+outputfile = /mt/user-batch/dpasari/scan_z4_prs_trials/results_DWZ4_stagedPRS_postform_b40p1/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 256
+dt = 0.01
+lSide = 179.2000     # dx = 0.7000, 2 pts/wall at a=1 (delta_min=1.4); same box as diag b40p1
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 90.0
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.01000000   # 1.0*mu
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters (Z4 domain-wall), beta_4 = 0.1, v=1, mu = 0.01
+# V = -mu^2|Phi|^2 + lambda1|Phi|^4 - lambda2(Phi^4+Phi*^4)
+mu      = 0.01
+lambda1 = 0.0001111111111
+lambda2 = 5.555555556e-06
+
+# ---- TRIAL: staged PRS, switch AFTER full formation ----
+# Identical to the diagnostic v4stag EXCEPT prsStartA 50 -> 60: the standard EOM runs through
+# the whole symmetry breaking (onset a~53, rms peaks a~56), and the COUPLED PRS package
+# (fat-wall + 3H damping, set together per PRS literature) switches on only at a>=60, once the
+# field is on the vacuum. NB: at a=60 the comoving wall is delta/a = 1.4/60 ~ 0.023 (dx=0.70),
+# i.e. ~0.03 pts/wall -> sub-grid. This run tests whether post-formation switching avoids the
+# v4stag drain or just freezes an unresolved wall (the resolution squeeze).
+prsWall       = true
+prsDamping    = 1.0          # coupled with prsWall (NOT set independently)
+frictionGamma = 0.0
+frictionEndA  = 3.0
+prsStartA     = 60.0

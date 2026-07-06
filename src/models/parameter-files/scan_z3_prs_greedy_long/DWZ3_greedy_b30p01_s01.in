@@ -1,0 +1,48 @@
+#Output
+outputfile = results/scan_z3_prs_greedy_long/results_DWZ3_greedy_b30p01_s01/
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 1024
+dt = 0.010000
+lSide = 215.0     # mu=1, dx=0.2100; fixed box: cells/core 6.7(b.01)->2.5(b.99); small-beta cores well resolved; >=4 horizons to a=51
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq  = 5
+tOutputRareFreq = 3
+tMax = 120.0      # EXTENDED 2026-06-27 (was 50); a=1+eta, a_max~121; horizons/side mu*L/a = 1.78@a121
+tBackupFreq = -1.00     # <0 = OFF (default); PRS ~23-27h @64rk. BACKUP_FRAC to enable.
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+GWprojectorType = 2
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 1.0
+
+#IC
+kCutOff = 3
+baseSeed = greedy_s01
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Z3 domain wall, beta_N = 0.01 (R=sqrt((1-bN)/(1+bN))), v=1, mu=1
+# lambda1 = 1/R, lambda2 = sqrt(2)(1-R)/(3R); breaking marker <|Phi|^2> > 0.25
+mu      = 1.0
+lambda1 = 1.0100505038
+lambda2 = 0.0047378529
+
+# GREEDY N=1024 plateau scan (2026-06-26). PRS. A=scal/(2aH); scal1 is the only wall col; wall_diagnostics emitted.
+prsWall = true
+prsDamping = 1.0
+prsStartA = 0

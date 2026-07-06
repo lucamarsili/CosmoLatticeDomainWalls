@@ -8,6 +8,10 @@
 // File info: Main contributor(s): Daniel G. Figueroa, Adrien Florio, Francisco Torrenti,  Year: 2020
 
 #include "CosmoInterface/cosmointerface.h"
+#include "TempLat/lattice/measuringtools/scaling.h"
+#include <vector>
+#include <string>
+#include <utility>
 
 //Include cosmointerface to have access to all of the library.
 
@@ -22,15 +26,9 @@ namespace TempLat
 
     struct ModelPars : public TempLat::DefaultModelPars {
     	static constexpr size_t NScalars = 2;
-        // In our phi4 example, we only want 2 scalar fields.
         static constexpr size_t NPotTerms = 3;
-        // Our potential naturaly splits into two terms: the inflaton potential
-        // and the interaction with the daughter field.
-
-        // All the numbers of fields are 0 by default, so we need only
-        // to specify that we want two scalar fields.
-        // See the model with gauge fields to have an example of how to turn
-        // them on and specify interactions.
+        // Z3 has one distinct wall type (all walls are adjacent by symmetry).
+        static constexpr size_t NWallTypes = 1;
     };
 
   #define MODELNAME DWZ3
@@ -50,6 +48,7 @@ namespace TempLat
 private:
 
     double lambda1, lambda2, mu; //here the only parameters are the self interacting coupling lambda and the vev.
+    double vev, V0; // h-component vev (= sqrt(2)|<phi>|) and vacuum subtraction so V(vev,0)=0
 // Here are the declaration of the model specific parameters. They are 'private'
 // to force you using them only within your model and not outside.
 ///SCALE FACTOR model.aI or model.aSI
@@ -108,12 +107,16 @@ private:
         /////////
         // Rescaling for program variables
         /////////
-        double beta = 3*lambda2/(sqrt(8*lambda1));
         alpha = 1;
-        fStar = mu/(2*sqrt(lambda1))*(beta+ sqrt(pow<2>(beta)+1)); //proper vacuum 
-        omegaStar =mu;  // sqrt(lambda) * fStar;
-        //my guess, it should work but I need to remember this, results might be weird
-        //without proper interpretation
+        // Lattice fields are the components (h,a) with phi=(h+ia)/sqrt(2), so the vacuum
+        // sits at <h> = sqrt(2)|<phi>| = mu*(3*lambda2+sqrt(8*lambda1+9*lambda2^2))/(2*sqrt(2)*lambda1)
+        // (= sqrt(2) x the paper's |v_k|). fStar = h-vev matches the DWZ4 convention
+        // fStar = mu/sqrt(lambda1-2*lambda2), so Z3/Z4 fluctuation seeds are comparable.
+        vev = mu*(3*lambda2 + sqrt(8*lambda1 + 9*lambda2*lambda2))/(2*sqrt(2.0)*lambda1);
+        // Vacuum-energy subtraction: V0 = -V(h=vev,a=0) so the potential vanishes in vacuum.
+        V0 = 0.5*mu*mu*vev*vev - 0.25*lambda1*pow(vev,4) + (lambda2*mu/sqrt(2.0))*pow(vev,3);
+        fStar = vev;
+        omegaStar = mu;
         // We now need to specify the rescaling from physical units to program units.
         // This consists of the  time rescaling exponent alpha, the field rescaling fStar
         // and the velocity rescaling omegaStar.
@@ -145,7 +148,7 @@ private:
     // to define different function with the same name. The 'auto' keyword lets the compiler
     // figure out on itself what is the actual return type of the function.
     {
-      return -(0.5)*mu*mu*(pow<2>(fldS(0_c)) +pow<2>(fldS(1_c)) )  + (1/(512*pow(lambda1,3))*pow(3*lambda2+sqrt(lambda1)*sqrt(8+9*pow(lambda2,2)/lambda1),2)*(12*lambda1+3*(-3+4*sqrt(2))*pow(lambda2,2)+(-3+4*sqrt(2))*sqrt(lambda1)*lambda2*sqrt(8+9*pow(lambda2,2)/lambda1))*pow(mu,4) ) ;
+      return -(0.5)*mu*mu*(pow<2>(fldS(0_c)) +pow<2>(fldS(1_c)) )  + V0 ;
     }
 
 	// 0.25 * pow<4>(fldS(0_c));
@@ -220,18 +223,116 @@ private:
 	// da qua
   auto potDeriv2(Tag<0>) // Second derivative h
   {
-    // d^2V/dS0^2 = 4*lambda1*(3*S0^2 + S1^2) - mu*(12*lambda2*S0 + 2)
+    // d^2V/dh^2 = 3*lambda1*h^2 + lambda1*a^2 - 3*sqrt(2)*lambda2*mu*h - mu^2   (h=S0, a=S1)
     return lambda1*pow<2>(fldS(1_c)) + 3*lambda1*pow<2>(fldS(0_c))-mu*(3*sqrt(2)*lambda2*fldS(0_c) + mu);
   }
 
   auto potDeriv2(Tag<1>) // Second derivative wrt a
   {
-    // d^2V/dS1^2 = 4*lambda1*(S0^2 + 3*S1^2) - mu*(2 - 12*lambda2*S0)
+    // d^2V/da^2 = lambda1*h^2 + 3*lambda1*a^2 + 3*sqrt(2)*lambda2*mu*h - mu^2   (h=S0, a=S1)
     return 3 *lambda1*pow<2>(fldS(1_c)) + lambda1*pow<2>(fldS(0_c)) + mu*(3*sqrt(2)*lambda2*fldS(0_c) - mu);
   }
 
-		
-	
+    /////////
+    // Wall area terms (called by EnergiesMeasurer for each wall type).
+    // Tag<WallIdx> is 0-based; ZNvacuumPhase takes 1-based WallType = WallIdx+1.
+    // Z3 has NWallTypes=1 so only Tag<0> (adjacent walls) is needed.
+    /////////
+    template<int WallIdx>
+    auto wallAreaTerm(Tag<WallIdx>, double lSide_in, int N_in)
+    {
+        return FieldFunctionals::ZNvacuumPhase<3, WallIdx + 1>(*this, lSide_in, N_in);
+    }
+
+    /////////
+    // Junction (theta-winding string) + wall-velocity diagnostics for Z3.
+    // Mirrors DWZ4 (see DWZ4.h) but Z3-specific: there are NO antipodal/diagonal
+    // walls (odd N) and only ONE wall type, so the antipodal-edge flag and the
+    // non-adjacent / "all" velocity selectors are dropped (17 columns vs 24).
+    // Written to a separate "wall_diagnostics" file on the INFREQUENT schedule;
+    // EnergiesMeasurer detects these methods via SFINAE.
+    //
+    //   Junction:  Jstr_len (a*dx/L^3 length density, |w|>=1), Jstr_cnt (raw
+    //              pierced faces), Jstr_signed (net winding ~0 check),
+    //              Jstr_w2 (|w|>=2 faces), Jcore_cnt (|Phi| < 0.3 v core sites).
+    //   Velocity:  v^2 gamma^2 = sum(mask*KE)/sum(mask*V); raw sums {KE,V,N} emitted.
+    //                A = potential cutoff V > alpha*Vmax (alpha=0.2,0.4,0.6)  [primary
+    //                    for Z3 -- binning-free; see note below],
+    //                B = ZNvacuumPhase adjacent wall-site mask.
+    // Note: the +pi/N sector-binning offset misaligns Z3 vacua onto sector
+    // boundaries (odd N), so the selector-B mask and the 𝒜 area term carry some
+    // bulk flicker (common-mode; cancels in phys-vs-PRS).  Selector A (potential
+    // cutoff) is binning-free and is the primary Z3 velocity estimator.
+    /////////
+
+    // Per-site physical kinetic-energy density of the two scalars (0.5 a^-6 pi^2).
+    auto wallKineticDensity()
+    {
+        return 0.5 * pow<-6>(aI) * (pow<2>(piS(0_c)) + pow<2>(piS(1_c)));
+    }
+
+    // Per-site (vacuum-subtracted) potential-energy density.
+    auto wallPotentialDensity()
+    {
+        return potentialTerms(Tag<0>()) + potentialTerms(Tag<1>()) + potentialTerms(Tag<2>());
+    }
+
+    std::vector<std::string> wallDiagnosticsHeaders() const
+    {
+        return { "Jstr_len", "Jstr_cnt", "Jstr_signed", "Jstr_w2", "Jcore_cnt",
+                 "velA02_KE", "velA02_V", "velA02_N",
+                 "velA04_KE", "velA04_V", "velA04_N",
+                 "velA06_KE", "velA06_V", "velA06_N",
+                 "velBadj_KE", "velBadj_V", "velBadj_N" };
+    }
+
+    std::vector<double> wallDiagnosticsValues(double lSide_in, int N_in)
+    {
+        using FF = FieldFunctionals;
+        std::vector<double> out;
+        out.reserve(17);
+
+        // --- junction (theta-winding) string (generic in N) ---
+        out.push_back(scale(FF::ZNstringDensity(*this, lSide_in, N_in)));
+        out.push_back(scale(FF::ZNstringCount  (*this, lSide_in, N_in)));
+        out.push_back(scale(FF::ZNstringSigned (*this, lSide_in, N_in)));
+        out.push_back(scale(FF::ZNstringW2     (*this, lSide_in, N_in)));
+        // |Phi| core sites: |fld|^2 < 0.09 vev^2  (eps = 0.3 of vacuum field value).
+        out.push_back(scale(FF::fieldCoreIndicator(*this, 0.09 * vev * vev)));
+
+        // --- wall velocity:  v^2 gamma^2 = sum(mask*KE)/sum(mask*V) ---
+        // Adjacent-wall barrier height (vacuum-subtracted): the mountain-pass saddle
+        // lies along theta = pi/3 (the bisector between adjacent Z3 vacua, cos3theta=-1).
+        // Radial saddle radius Rs solves lambda1 Rs^2 + 3(lambda2 mu/sqrt2) Rs - mu^2 = 0
+        // (mirror of vev with the +3lambda2 -> -3lambda2 sign flip):
+        const double Rs   = mu * (sqrt(9.0 * lambda2 * lambda2 + 8.0 * lambda1) - 3.0 * lambda2)
+                                 / (2.0 * sqrt(2.0) * lambda1);
+        const double Vmax = -0.5 * mu * mu * Rs * Rs
+                          + 0.25 * lambda1 * Rs * Rs * Rs * Rs
+                          + (lambda2 * mu / sqrt(2.0)) * Rs * Rs * Rs
+                          + V0;
+        auto KE = wallKineticDensity();
+        auto Vd = wallPotentialDensity();
+
+        // selector A: potential cutoff (binning-free; primary for Z3)
+        for (double aCut : {0.2, 0.4, 0.6}) {
+            auto m = heaviside(Vd - aCut * Vmax);
+            out.push_back(scale(m * KE));
+            out.push_back(scale(m * Vd));
+            out.push_back(scale(m));
+        }
+
+        // selector B: ZNvacuumPhase adjacent wall-site mask (only wall type for Z3)
+        auto mAdj = FF::ZNwallSiteMask<3, 1>(*this, lSide_in, N_in);
+        out.push_back(scale(mAdj * KE));
+        out.push_back(scale(mAdj * Vd));
+        out.push_back(scale(mAdj));
+
+        return out;
+    }
+
+
+
     };
 }
 

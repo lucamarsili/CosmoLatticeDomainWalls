@@ -1,0 +1,43 @@
+#Output
+outputfile = ./
+
+#Evolution
+expansion = true
+evolver = LF
+
+#Lattice
+N = 512
+dt = 0.01
+lSide = 100
+
+#Times
+t0 = 0
+tOutputFreq  = 0.1
+tOutputInfreq = 5
+tOutputRareFreq = 5
+tMax = 40
+
+#Spectra options
+PS_type = 1
+PS_version = 1
+
+#GWs
+withGWs = false
+
+fixedBackground = true
+omegaEoS = 0.3333
+H0 = 0.0547723
+
+#IC
+kCutOff = 3
+initial_amplitudes = 0 0
+initial_momenta    = 0 0
+
+# Model Parameters
+# Requires lambda1 > 2*lambda2 > 0 for four degenerate vacua.
+# Vacuum vev: v = mu / sqrt(lambda1 - 2*lambda2).
+# beta_eff = lambda2 / lambda1 controls wall tension ratio (type2/type1).
+# Example below: lambda1=0.003, lambda2=0.001 → v ≈ mu/sqrt(0.001), beta_eff ≈ 0.33
+lambda1 = 0.003
+lambda2 = 0.001
+mu      = 0.0547723

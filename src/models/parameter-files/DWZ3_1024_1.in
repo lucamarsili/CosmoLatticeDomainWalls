@@ -1,6 +1,6 @@
 
 #Output
-outputfile = /lustre/ific.uv.es/prj/gl/som.somlat/lmar/buildZ3_1024_smallcutoff/
+outputfile = /mt/user-batch/dpasari/results_z3_b_1_fast/
 
 #Evolution
 expansion = true
@@ -8,14 +8,14 @@ evolver = LF
 #Lattice
 N = 1024
 dt = 0.01
-lSide = 24
+lSide = 30
 
 #Times
 t0=0
 tOutputFreq = 0.1
 tOutputInfreq = 5
-tOutputRareFreq = 5
-tMax = 50  #should start breaking from 24
+tOutputRareFreq = 3
+tMax =50  #should start breaking from 24
 
 #Spectra options
 PS_type = 1
@@ -29,9 +29,9 @@ withGWs = false
 
 fixedBackground = true
 omegaEoS = 0.3333
-H0 = 0.0547723 #GeV
+H0 = 1 #GeV
 
-energy_snapshot = S_C 
+# energy_snapshot = E_S_G 
 #IC
 kCutOff = 1
 initial_amplitudes =  0 0    # homogeneous amplitudes in GeV
